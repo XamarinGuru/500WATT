@@ -1,0 +1,38 @@
+﻿<Properties StartupConfiguration="{7E904771-5A56-4C70-88F8-67D14558069C}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="NitroiOS/Controllers/EventCalendarViewController.cs">
+    <Files>
+      <File FileName="NitroiOS/Controllers/EventCalendarViewController.cs" Line="5" Column="7" />
+      <File FileName="NitroiOS/Controllers/CalendarHomeViewController.cs" Line="1" Column="1" />
+      <File FileName="NitroDroid/Fragment/FragmentCalendar.cs" Line="238" Column="1" />
+      <File FileName="NitroDroid/Fragment/FragmentEvents.cs" Line="7" Column="2" />
+      <File FileName="NitroDroid/Fragment/FragmentProfile.cs" Line="208" Column="96" />
+      <File FileName="NitroDroid/Fragment/TimeFormatDialog.cs" Line="7" Column="5" />
+      <File FileName="NitroDroid/Activities/AddCommentActivity.cs" Line="6" Column="5" />
+      <File FileName="NitroDroid/Activities/AdjustTrainningActivity.cs" Line="41" Column="8" />
+      <File FileName="NitroDroid/Activities/AnalyticsActivity.cs" Line="22" Column="30" />
+      <File FileName="NitroDroid/Activities/BaseActivity.cs" Line="313" Column="20" />
+      <File FileName="NitroDroid/Activities/ChangePasswordActivity.cs" Line="28" Column="8" />
+      <File FileName="NitroDroid/Activities/CloseApplicationActivity.cs" Line="1" Column="1" />
+      <File FileName="NitroDroid/Activities/EditProfileActivity.cs" Line="6" Column="18" />
+      <File FileName="NitroDroid/Activities/EventCalendarActivity.cs" Line="23" Column="13" />
+      <File FileName="NitroDroid/Activities/EventInstructionActivity.cs" Line="69" Column="28" />
+      <File FileName="NitroDroid/Activities/ForgotPasswordActivity.cs" Line="7" Column="5" />
+      <File FileName="NitroDroid/Activities/InitActivity.cs" Line="1" Column="1" />
+      <File FileName="NitroDroid/Activities/LocationActivity.cs" Line="10" Column="5" />
+      <File FileName="NitroDroid/Activities/LoginActivity.cs" Line="9" Column="5" />
+      <File FileName="NitroDroid/Activities/RegisterActivity.cs" Line="26" Column="8" />
+      <File FileName="NitroDroid/Activities/SelectPTypeActivity.cs" Line="8" Column="23" />
+      <File FileName="NitroDroid/Activities/SplashActivity.cs" Line="53" Column="75" />
+      <File FileName="NitroDroid/Activities/SwipeTabActivity.cs" Line="41" Column="53" />
+      <File FileName="PortableLibrary/Constants.cs" Line="27" Column="51" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Lamdan.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.0668daee0ac6c3c2" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Lamdan.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.F928EBBA-0B84-40DD-825C-0731B372B2D0" />
+</Properties>
