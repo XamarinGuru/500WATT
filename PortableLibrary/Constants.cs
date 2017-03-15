@@ -3,6 +3,9 @@ namespace PortableLibrary
 {
 	public static class Constants
 	{
+		public const string SPEC_GROUP_TYPE = "fivewa" ;
+		public const string DEVICE_CALENDAR_TITLE = "500WATT Calendar";
+
 		public const string GOHEJA_BASEPATH = "http://go-heja.com/Service1.svc?wsdl";
 
 		public const string FIREBASE_APPSECRET = "PtLxxW6zYGZSE3UXmmiFxVCqzNdZOLxLNHdHNixF";
@@ -11,7 +14,6 @@ namespace PortableLibrary
 		public const string GOOGLE_MAP_API_KEY = "AIzaSyAiBwRUm_KZDv_sp3eI7F8hxkePqDTvY20";
 		public const int MAP_ZOOM_LEVEL = 15;
 
-		public const string CALENDAR_TITLE = "500WATT Calendar";
 
 		//URLs
 		public const string URL_TERMS = "http://go-heja.com/nitro/terms.php/";
@@ -23,8 +25,8 @@ namespace PortableLibrary
 
 		public const string URL_GOOGLE = "www.google.com";
 
-		//public static string[] SPEC_GROUP_TYPE = { "innovi" };
-		public static string[] SPEC_GROUP_TYPE = { "fivewa" };
+		public const string PATH_USER_IMAGE = "data/goheja." + SPEC_GROUP_TYPE + ".com/files/me.png";
+
 
 		public static double[] LOCATION_ISURAEL = { 31.0461, 34.8516 };
 

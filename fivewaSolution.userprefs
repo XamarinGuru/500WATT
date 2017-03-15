@@ -1,50 +1,19 @@
 ﻿<Properties StartupConfiguration="{3EAADAD5-605D-4D6A-9E8C-90EADC2539E6}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="NitroiOS/Controllers/MainPageViewController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="PortableLibrary/Constants.cs">
     <Files>
-      <File FileName="NitroDroid/Fragment/FragmentCalendar.cs" Line="18" Column="12" />
-      <File FileName="NitroDroid/Fragment/FragmentEvents.cs" Line="7" Column="2" />
-      <File FileName="NitroDroid/Fragment/FragmentProfile.cs" Line="131" Column="32" />
-      <File FileName="NitroDroid/Fragment/TimeFormatDialog.cs" Line="16" Column="3" />
-      <File FileName="NitroDroid/Activities/AddCommentActivity.cs" Line="9" Column="14" />
-      <File FileName="NitroDroid/Activities/AdjustTrainningActivity.cs" Line="14" Column="14" />
-      <File FileName="NitroDroid/Activities/AnalyticsActivity.cs" Line="16" Column="29" />
-      <File FileName="NitroDroid/Activities/BaseActivity.cs" Line="8" Column="16" />
-      <File FileName="NitroDroid/Activities/ChangePasswordActivity.cs" Line="13" Column="14" />
-      <File FileName="NitroDroid/Activities/CloseApplicationActivity.cs" Line="1" Column="1" />
-      <File FileName="NitroDroid/Activities/EditProfileActivity.cs" Line="11" Column="10" />
-      <File FileName="NitroDroid/Activities/EventCalendarActivity.cs" Line="17" Column="14" />
-      <File FileName="NitroDroid/Activities/EventInstructionActivity.cs" Line="9" Column="14" />
-      <File FileName="NitroDroid/Activities/ForgotPasswordActivity.cs" Line="8" Column="14" />
-      <File FileName="NitroDroid/Activities/InitActivity.cs" Line="1" Column="1" />
-      <File FileName="NitroDroid/Activities/LocationActivity.cs" Line="11" Column="14" />
-      <File FileName="NitroDroid/Activities/LoginActivity.cs" Line="13" Column="14" />
-      <File FileName="NitroDroid/Activities/RegisterActivity.cs" Line="8" Column="14" />
-      <File FileName="NitroDroid/Activities/SelectPTypeActivity.cs" Line="18" Column="13" />
-      <File FileName="NitroDroid/Activities/SplashActivity.cs" Line="78" Column="22" />
-      <File FileName="NitroDroid/Activities/SwipeTabActivity.cs" Line="24" Column="37" />
-      <File FileName="NitroDroid/Properties/AssemblyInfo.cs" Line="38" Column="42" />
-      <File FileName="NitroiOS/App.cs" Line="1" Column="1" />
-      <File FileName="NitroiOS/AppDelegate.cs" Line="6" Column="16" />
-      <File FileName="NitroiOS/Entitlements.plist" />
       <File FileName="NitroiOS/Info.plist" />
-      <File FileName="NitroiOS/Main.cs" Line="12" Column="1" />
-      <File FileName="NitroiOS/Controllers/CalendarHomeViewController.cs" Line="143" Column="37" />
-      <File FileName="PortableLibrary/XuniLicense.cs" Line="64" Column="2" />
-      <File FileName="PortableLibrary/Constants.cs" Line="11" Column="63" />
-      <File FileName="NitroiOS/Controllers/SignUpViewController.cs" Line="28" Column="56" />
-      <File FileName="NitroiOS/Controllers/LoginViewController.cs" Line="77" Column="1" />
-      <File FileName="NitroiOS/Controllers/MainPageViewController.cs" Line="23" Column="1" />
+      <File FileName="PortableLibrary/Constants.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/sagivdaniel/Desktop/fivewa/500Mob/NitroiOS/Controllers/LoginViewController.cs" relfile="NitroiOS/Controllers/LoginViewController.cs" line="73" column="1" />
-      <Breakpoint file="/Users/sagivdaniel/Desktop/fivewa/500Mob/NitroiOS/Controllers/MainPageViewController.cs" relfile="NitroiOS/Controllers/MainPageViewController.cs" line="23" column="1" />
+      <Breakpoint file="/Users/dev/Desktop/500WATT/NitroiOS/Controllers/LoginViewController.cs" relfile="NitroiOS/Controllers/LoginViewController.cs" line="73" column="1" />
+      <Breakpoint file="/Users/dev/Desktop/500WATT/NitroiOS/Controllers/MainPageViewController.cs" relfile="NitroiOS/Controllers/MainPageViewController.cs" line="23" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.fivewa.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.sag" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Nitro.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.F928EBBA-0B84-40DD-825C-0731B372B2D0" />
+  <MonoDevelop.Ide.ItemProperties.Nitro.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.2FEC57E0-B31D-48DC-9739-910D65B25BDB" />
 </Properties>

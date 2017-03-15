@@ -1,9 +1,0 @@
-Values/Strings.xml;values/strings.xml
-Values/attrs.xml;values/attrs.xml
-Values/colors.xml;values/colors.xml
-Values/dimens.xml;values/dimens.xml
-Values/styles.xml;values/styles.xml
-color/calendar_text_selector.xml;color/calendar_text_selector.xml
-drawable/calendar_bg_selector.xml;drawable/calendar_bg_selector.xml
-layout/month.xml;layout/month.xml
-layout/week.xml;layout/week.xml
