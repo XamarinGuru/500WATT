@@ -56,7 +56,7 @@
     <MtouchDebug>true</MtouchDebug>
     <AssemblyName>location2</AssemblyName>
     <CodesignKey>iPhone Distribution: sagiv daniel (ACS2X6ERDY)</CodesignKey>
-    <CodesignProvision>f749b1c9-aacc-4516-b5d5-5a66cc6cc7b6</CodesignProvision>
+    <CodesignProvision>7f8a1251-cd3f-4088-9fe5-47cb5f39a8b5</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
