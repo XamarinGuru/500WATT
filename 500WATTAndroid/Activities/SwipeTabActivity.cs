@@ -142,42 +142,23 @@ namespace goheja
 
 			if (ShouldShowRequestPermissionRationale(rdPermission) || ShouldShowRequestPermissionRationale(wrPermission))
 			{
-				AlertDialog.Builder alert = new AlertDialog.Builder(this);
-				alert.SetTitle("");
-				alert.SetMessage("Calendar access is required to show your events on your device calendar.");
-				alert.SetPositiveButton("Cancel", (senderAlert, args) =>
-				{
-				});
-				alert.SetNegativeButton("OK", (senderAlert, args) =>
-				{
-					ActivityCompat.RequestPermissions(this, PermissionsCalendar, RequestCalendarId);
-				});
-				RunOnUiThread(() =>
-				{
-					alert.Show();
-				});
-
+				ShowMessageBox(null, "Calendar access is required to show your events on your device calendar.", "Cancel", new[] { "OK" }, SendingPermissionRequest);
 				return;
 			}
 
+			SendingPermissionRequest();
+		}
+
+		void SendingPermissionRequest()
+		{
 			ActivityCompat.RequestPermissions(this, PermissionsCalendar, RequestCalendarId);
 		}
 
 		public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
 		{
-			switch (requestCode)
+			if (requestCode == RequestCalendarId && grantResults[0] == Permission.Granted)
 			{
-				case RequestCalendarId:
-					{
-						if (grantResults[0] == Permission.Granted)
-						{
-							StartBackgroundService();
-						}
-						else
-						{
-						}
-					}
-					break;
+				StartBackgroundService();
 			}
 		}
 

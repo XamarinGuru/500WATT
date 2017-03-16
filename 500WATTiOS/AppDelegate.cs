@@ -211,14 +211,14 @@ namespace location2
 								"Planned distance : " + formattedDistance + "KM" + Environment.NewLine +
 								"Duration : " + strDuration + Environment.NewLine;
 
-				var encodedTitle = System.Web.HttpUtility.UrlEncode(goHejaEvent.title);
+				//var encodedTitle = System.Web.HttpUtility.UrlEncode(goHejaEvent.title);
 
-				var urlDate = newEvent.StartDate;
-				var strDate = String.Format("{0:dd-MM-yyyy hh:mm:ss}", startDate);
-				var encodedDate = System.Web.HttpUtility.UrlEncode(strDate);
-				var encodedEventURL = String.Format(PortableLibrary.Constants.URL_EVENT_MAP, encodedTitle, encodedDate, AppSettings.Username);
+				//var urlDate = newEvent.StartDate;
+				//var strDate = String.Format("{0:dd-MM-yyyy hh:mm:ss}", startDate);
+				//var encodedDate = System.Web.HttpUtility.UrlEncode(strDate);
+				//var encodedEventURL = String.Format(PortableLibrary.Constants.URL_EVENT_MAP, encodedTitle, encodedDate, AppSettings.Username);
 
-				newEvent.Url = new NSUrl(System.Web.HttpUtility.UrlEncode(encodedEventURL)); ;
+				//newEvent.Url = new NSUrl(System.Web.HttpUtility.UrlEncode(encodedEventURL)); ;
 
 				//add alarm to event
 				EKAlarm[] alarmsArray = new EKAlarm[2];

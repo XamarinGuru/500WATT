@@ -183,12 +183,9 @@
     <AndroidResource Include="Resources\drawable\dist_new.png" />
     <AndroidResource Include="Resources\drawable\edit_icon.png" />
     <AndroidResource Include="Resources\drawable\email_icon.png" />
-    <AndroidResource Include="Resources\drawable\goheja_icon.png" />
     <AndroidResource Include="Resources\drawable\go_button.png" />
     <AndroidResource Include="Resources\drawable\header.png" />
-    <AndroidResource Include="Resources\drawable\header_bg.jpg" />
     <AndroidResource Include="Resources\drawable\heart_new.png" />
-    <AndroidResource Include="Resources\drawable\heja_icon.png" />
     <AndroidResource Include="Resources\drawable\home_icon.png" />
     <AndroidResource Include="Resources\drawable\horizontal_line.png" />
     <AndroidResource Include="Resources\drawable\icon.png" />

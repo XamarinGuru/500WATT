@@ -114,7 +114,7 @@ namespace goheja
 
 			InitUISettings();
 
-			CheckLocationPermission();
+			//CheckLocationPermission();
         }
 
 		void InitUISettings()
@@ -169,6 +169,11 @@ namespace goheja
 
 			mMapView.SetOnMarkerClickListener(this);
 
+			CheckLocationPermission();
+		}
+
+		void SetMap()
+		{
 			var currentLocation = GetGPSLocation();
 
 			MarkerOptions markerOpt = new MarkerOptions();
@@ -274,12 +279,19 @@ namespace goheja
 
         private void ActionStartPause(object sender, EventArgs e)
         {
+			if (!_locationManager.IsProviderEnabled(LocationManager.GpsProvider))
+			{
+				ShowMessageBox(null, "You can't play Sport Comp wihtout GPS location service.");
+				return;
+			}
+
 			if (pState == PRACTICE_STATE.ready)
 			{
 				StartTimer();
 
 				btnStartPause.SetBackgroundResource(Resource.Drawable.resume_inactive);
 				btnStop.Visibility = ViewStates.Visible;
+
 
 				_locationManager.RequestLocationUpdates(LocationManager.GpsProvider, 2000, 1, this);
 
@@ -442,6 +454,7 @@ namespace goheja
         private void StartLocationService()
         {
             _title.Text = "Searching for GPS...";
+			SetMap();
         }
 
         #region Android Location Service methods
