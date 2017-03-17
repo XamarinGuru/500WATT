@@ -5,7 +5,6 @@ using Android.OS;
 using Android.Views;
 using Android.Widget;
 using Com.GrapeCity.Xuni.FlexChart;
-using Com.GrapeCity.Xuni.Core;
 using PortableLibrary;
 
 using EventArgs = System.EventArgs;
@@ -23,8 +22,6 @@ namespace goheja
 
 		public View mView;
 
-		//RangeSliderControl zoomSlider;
-
 		FlexChart mPChart;
 		ChartRectangleAnnotation annoFocused = new ChartRectangleAnnotation();
 
@@ -36,8 +33,6 @@ namespace goheja
 
 		public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 		{
-			//LicenseManager.Key = License.Key;
-
 			rootActivity = this.Activity as SwipeTabActivity;
 			return inflater.Inflate(Resource.Layout.fCalendar, container, false);
 		}
@@ -76,13 +71,6 @@ namespace goheja
 		private void SetUIVariablesAndActions()
 		{
 			#region UI Variables
-			//zoomSlider = mView.FindViewById<RangeSliderControl>(Resource.Id.zoomSlider);
-			//zoomSlider.SetBarHeight(8);
-			//zoomSlider.AlwaysActive = false;
-			//zoomSlider.DefaultColor = Color.Gray;
-			//zoomSlider.ShowTextAboveThumbs = false;
-			//zoomSlider.ActiveColor = Color.Rgb(230, 160, 11);
-
 			lblCycleDuration = mView.FindViewById<TextView>(Resource.Id.lblCycleDuration);
 			lblRunDuration = mView.FindViewById<TextView>(Resource.Id.lblRunDuration);
 			lblSwimDuration = mView.FindViewById<TextView>(Resource.Id.lblSwimDuration);
@@ -107,9 +95,6 @@ namespace goheja
 			#endregion
 
 			#region Actions
-			//zoomSlider.LowerValueChanged += HanelerGraphZoomChanged;
-			//zoomSlider.UpperValueChanged += HanelerGraphZoomChanged;
-
 			mView.FindViewById<RelativeLayout>(Resource.Id.collapsCycle).Click += ActionCollepse;
 			mView.FindViewById<RelativeLayout>(Resource.Id.collapsRun).Click += ActionCollepse;
 			mView.FindViewById<RelativeLayout>(Resource.Id.collapsSwim).Click += ActionCollepse;
@@ -224,10 +209,6 @@ namespace goheja
 					}
 
 					mPChart.Series.Add(cSeries);
-
-					//zoomSlider.SetRangeValues(0, pData.dataProvider.Count);
-					//zoomSlider.SetSelectedMaxValue(pData.dataProvider.Count);
-					//zoomSlider.SetSelectedMinValue(0);
 				}
 				#endregion
 
@@ -376,25 +357,6 @@ namespace goheja
 			return animator;
 		}
 		#endregion
-
-		//#region Handler
-		//void HanelerGraphZoomChanged(object sender, EventArgs e)
-		//{
-		//	try
-		//	{
-		//		var rSlider = sender as RangeSliderControl;
-
-		//		var gZoomLevel = (rSlider.GetSelectedMaxValue() - rSlider.GetSelectedMinValue()) / rSlider.GetAbsoluteMaxValue();
-		//		mPChart.AxisX.Scale = gZoomLevel;
-		//		var posX = new Java.Lang.Double(rSlider.GetSelectedMinValue() * pData.dataProvider.Count);
-		//		mPChart.AxisX.ScrollTo(posX, Position.Max);
-		//	}
-		//	catch (Exception err)
-		//	{
-		//		Toast.MakeText(Activity, err.ToString(), ToastLength.Long).Show();
-		//	}
-		//}
-		//#endregion
 	}
 
 #region custom tooltip
@@ -424,7 +386,7 @@ namespace goheja
 				mContext.mView.FindViewById<TextView>(Resource.Id.txtATL).Text = String.Format("ATL: {0}", data.atl);
 				mContext.mView.FindViewById<TextView>(Resource.Id.txtCTL).Text = String.Format("CTL: {0}", data.ctl);
 				mContext.mView.FindViewById<TextView>(Resource.Id.txtDailyTSS).Text = String.Format("Daily Load: {0}", data.dayliTss);
-				mContext.mView.FindViewById<TextView>(Resource.Id.txtDailyIF).Text = String.Format("Daily IF: {0}", data.dayliIf);
+				mContext.mView.FindViewById<TextView>(Resource.Id.txtDailyIF).Text = String.Format("Day Intencity: {0}", data.dayliIf);
 			}
 			catch (Exception err)
 			{

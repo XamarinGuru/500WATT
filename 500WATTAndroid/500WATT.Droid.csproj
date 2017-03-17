@@ -111,15 +111,6 @@
     <Reference Include="AndHUD">
       <HintPath>..\Components\AndHUD-1.3.1\lib\android\AndHUD.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.RangeSlider.Common">
-      <HintPath>..\packages\Xamarin.RangeSlider.0.6.14\lib\MonoAndroid10\Xamarin.RangeSlider.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.RangeSlider.Droid">
-      <HintPath>..\packages\Xamarin.RangeSlider.0.6.14\lib\MonoAndroid10\Xamarin.RangeSlider.Droid.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentRangeSlider">
-      <HintPath>..\Components\CustomizableRangeSlider-1.0.0\lib\android\ComponentRangeSlider.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Fragment\FragmentCalendar.cs" />
@@ -158,7 +149,6 @@
     <Compile Include="ViewModel\PointInfoDialog.cs" />
     <Compile Include="Activities\AnalyticsActivity.cs" />
     <Compile Include="Activities\SelectPTypeActivity.cs" />
-    <Compile Include="ViewModel\RangeSlider.cs" />
     <Compile Include="Web References\trackSvc\Reference.cs">
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
@@ -347,10 +337,6 @@
     </XamarinComponentReference>
     <XamarinComponentReference Include="AndHUD">
       <Version>1.3.1</Version>
-      <Visible>False</Visible>
-    </XamarinComponentReference>
-    <XamarinComponentReference Include="CustomizableRangeSlider">
-      <Version>1.0.0</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
   </ItemGroup>
