@@ -128,52 +128,6 @@ namespace goheja
 			rootActivity.Finish();
 		}
 
-		//#region remove existing Nitro calendar
-		//private void resetCalBtn__OnClick(object sender, EventArgs e)
-		//{
-		//	try
-		//	{
-		//		var calendarsUri = CalendarContract.Calendars.ContentUri;
-
-		//		string[] calendarsProjection = {
-		//		   CalendarContract.Calendars.InterfaceConsts.Id,
-		//		   CalendarContract.Calendars.InterfaceConsts.CalendarDisplayName,
-		//		   CalendarContract.Calendars.InterfaceConsts.AccountName
-		//		};
-
-		//		var cursor = this.Activity.ApplicationContext.ContentResolver.Query(calendarsUri, calendarsProjection, null, null, null);
-
-		//		if (cursor.MoveToFirst())
-		//		{
-		//			do
-		//			{
-		//				long id = cursor.GetLong(0);
-		//				String displayName = cursor.GetString(1);
-		//				if (displayName == "Nitro Calendar")
-		//					RemoveCalendar(id);
-		//			} while (cursor.MoveToNext());
-		//		}
-		//	}
-		//	catch
-		//	{
-		//	}
-		//}
-
-		//private void RemoveCalendar(long calID)
-		//{
-		//	try{
-		//		Android.Net.Uri.Builder builder1 = CalendarContract.Calendars.ContentUri.BuildUpon();
-		//		builder1.AppendQueryParameter(CalendarContract.Calendars.InterfaceConsts.CalendarDisplayName, "Nitro Calendar");
-
-		//		String[] selArgs = new String[] { "Nitro Calendar" };
-		//		this.Activity.ContentResolver.Delete(CalendarContract.Calendars.ContentUri, CalendarContract.Calendars.InterfaceConsts.CalendarDisplayName + " =? ", selArgs);
-		//	}
-		//	catch
-		//	{
-		//	}
-		//}
-		//#endregion
-
         public override void OnActivityResult(int requestCode, int resultCode, Intent data)
         {
             base.OnActivityResult(requestCode, resultCode, data);

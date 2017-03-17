@@ -5,6 +5,7 @@ namespace PortableLibrary
 	{
 		public const string SPEC_GROUP_TYPE = "fivewa" ;
 		public const string DEVICE_CALENDAR_TITLE = "500WATT Calendar";
+		public const string PATH_USER_IMAGE = "data/goheja.fivewa.com/files/me.png";
 
 		public const string GOHEJA_BASEPATH = "http://go-heja.com/Service1.svc?wsdl";
 
@@ -24,8 +25,6 @@ namespace PortableLibrary
 		public const string URL_GAUGE = "http://go-heja.com:8080/innovi/mobGraph/totalGauge.php?userId={0}";
 
 		public const string URL_GOOGLE = "www.google.com";
-
-		public const string PATH_USER_IMAGE = "data/goheja." + SPEC_GROUP_TYPE + ".com/files/me.png";
 
 
 		public static double[] LOCATION_ISURAEL = { 31.0461, 34.8516 };

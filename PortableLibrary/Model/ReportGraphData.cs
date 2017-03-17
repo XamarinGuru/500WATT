@@ -97,7 +97,6 @@ namespace PortableLibrary
 			for (int i = 0; i < dataProvider.Count; i++)
 			{
 				var pDate = DateTime.ParseExact(dataProvider[i].date, "MM-dd-yyyy", System.Globalization.CultureInfo.InvariantCulture);
-				//var pDate = DateTime.Parse(dataProvider[i].date);
 				if (pDate.DayOfYear == DateTime.Now.DayOfYear)
 					return i;
 			}

@@ -56,7 +56,8 @@ namespace goheja
 					SetPage(0);
 					return true;
 				}
-				else {
+				else
+				{
 					return false;
 				}
 			}
@@ -126,7 +127,8 @@ namespace goheja
 			{
 				StartBackgroundService();
 			}
-			else {
+			else
+			{
 				RequestCalendarPermission();
 			}
 		}

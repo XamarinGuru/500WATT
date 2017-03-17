@@ -415,7 +415,8 @@ namespace goheja
 			{
 				StartLocationService();
 			}
-			else {
+			else
+			{
 				RequestLocationPermission();
 			}
 		}
