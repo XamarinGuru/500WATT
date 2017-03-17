@@ -12,7 +12,8 @@ namespace goheja
     [Activity(Label = "listing", ScreenOrientation = ScreenOrientation.Portrait)]
 	public class RegisterActivity : BaseActivity
     {
-		EditText txtFirstname, txtLastname, txtUsername, txtEmail, txtPassword, txtAge, txtErrorUsername;
+		EditText txtFirstname, txtLastname, txtUsername, txtEmail, txtPassword, txtAge;
+		TextView txtErrorUsername;
 		ImageView invalidFirstname, invalidLastname, invalidUsername, invalidEmail, invalidPassword, invalidAge, invalidTerms;
 		LinearLayout errorFirstname, errorLastname, errorUsername, errorEmail, errorPassword;
 
@@ -35,7 +36,7 @@ namespace goheja
 			txtEmail = FindViewById<EditText>(Resource.Id.txtEmail);
 			txtPassword = FindViewById<EditText>(Resource.Id.txtPassword);
 			txtAge = FindViewById<EditText>(Resource.Id.txtAge);
-			txtErrorUsername = FindViewById<EditText>(Resource.Id.txtErrorUsername);
+			txtErrorUsername = FindViewById<TextView>(Resource.Id.txtErrorUsername);
 
 			invalidFirstname = FindViewById<ImageView>(Resource.Id.invalidFirstname);
 			invalidLastname = FindViewById<ImageView>(Resource.Id.invalidLastname);

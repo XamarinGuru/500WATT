@@ -301,7 +301,6 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <AndroidResource Include="Resources\drawable\timer_new.png" />
-    <AndroidResource Include="Resources\drawable\icon_thumb_slider.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />

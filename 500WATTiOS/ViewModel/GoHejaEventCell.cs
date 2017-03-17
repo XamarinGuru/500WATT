@@ -7,12 +7,12 @@ namespace location2
 {
 	public partial class GoHejaEventCell : UITableViewCell
 	{
-		public static readonly NSString Key = new NSString("goHejaEventCell");
+		public static readonly NSString Key = new NSString("NitroEventCell");
 		public static readonly UINib Nib;
 
 		static GoHejaEventCell()
 		{
-			Nib = UINib.FromName("goHejaEventCell", NSBundle.MainBundle);
+			Nib = UINib.FromName("NitroEventCell", NSBundle.MainBundle);
 		}
 
 		protected GoHejaEventCell(IntPtr handle) : base(handle)

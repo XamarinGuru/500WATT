@@ -491,9 +491,31 @@ namespace goheja
 			vibrator.Vibrate(time);
 		}
 
-		public void OnProviderDisabled(string provider) {_title.Text = "GPS disabled"; }
-		public void OnProviderEnabled(string provider) { _title.Text = "GPS enabled";}
-		public void OnStatusChanged(string provider, Availability status, Bundle extras) {_title.Text = "GPS low signal"; }
+		public void OnProviderDisabled(string provider) { 
+			_title.Text = "GPS disabled"; 
+
+			using (var alert = new AlertDialog.Builder(this))
+			{
+				alert.SetTitle("Please enable GPS");
+				alert.SetMessage("Enable GPS in order to get your current location.");
+
+				alert.SetPositiveButton("Enable", (senderAlert, args) =>
+				{
+					Intent intent = new Intent(global::Android.Provider.Settings.ActionLocationSourceSettings);
+					StartActivity(intent);
+				});
+
+				alert.SetNegativeButton("Continue", (senderAlert, args) =>
+				{
+					alert.Dispose();
+				});
+
+				Dialog dialog = alert.Create();
+				dialog.Show();
+			}
+		}
+		public void OnProviderEnabled(string provider) { _title.Text = "GPS enabled"; }
+		public void OnStatusChanged(string provider, Availability status, Bundle extras) { _title.Text = "GPS low signal"; }
 
 		public void OnLocationChanged(Location location)
         {
