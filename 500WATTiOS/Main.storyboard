@@ -2940,6 +2940,7 @@
                         <outlet property="viewErrorLastname" destination="lJl-DZ-5IC" id="name-outlet-lJl-DZ-5IC"/>
                         <outlet property="viewErrorPassword" destination="BZs-HH-yUu" id="name-outlet-BZs-HH-yUu"/>
                         <outlet property="viewErrorUsername" destination="x8p-bt-zUO" id="name-outlet-x8p-bt-zUO"/>
+                        <outlet property="txtUsername" destination="im2-jE-OZB" id="name-outlet-im2-jE-OZB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="108" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -6510,7 +6511,7 @@
         <image name="icon_home.png" width="100" height="100"/>
         <image name="icon_left.png" width="50" height="50"/>
         <image name="icon_lock.png" width="100" height="100"/>
-        <image name="icon_logo_new.png" width="160" height="56"/>
+        <image name="icon_logo_new.png" width="600" height="200"/>
         <image name="icon_map_pin.png" width="35" height="35"/>
         <image name="icon_other.png" width="136" height="169"/>
         <image name="icon_pencil.png" width="100" height="100"/>

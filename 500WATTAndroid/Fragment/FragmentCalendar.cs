@@ -23,7 +23,7 @@ namespace goheja
 
 		public View mView;
 
-		RangeSliderControl zoomSlider;
+		//RangeSliderControl zoomSlider;
 
 		FlexChart mPChart;
 		ChartRectangleAnnotation annoFocused = new ChartRectangleAnnotation();
@@ -76,12 +76,12 @@ namespace goheja
 		private void SetUIVariablesAndActions()
 		{
 			#region UI Variables
-			zoomSlider = mView.FindViewById<RangeSliderControl>(Resource.Id.zoomSlider);
-			zoomSlider.SetBarHeight(8);
-			zoomSlider.AlwaysActive = false;
-			zoomSlider.DefaultColor = Color.Gray;
-			zoomSlider.ShowTextAboveThumbs = false;
-			zoomSlider.ActiveColor = Color.Rgb(230, 160, 11);
+			//zoomSlider = mView.FindViewById<RangeSliderControl>(Resource.Id.zoomSlider);
+			//zoomSlider.SetBarHeight(8);
+			//zoomSlider.AlwaysActive = false;
+			//zoomSlider.DefaultColor = Color.Gray;
+			//zoomSlider.ShowTextAboveThumbs = false;
+			//zoomSlider.ActiveColor = Color.Rgb(230, 160, 11);
 
 			lblCycleDuration = mView.FindViewById<TextView>(Resource.Id.lblCycleDuration);
 			lblRunDuration = mView.FindViewById<TextView>(Resource.Id.lblRunDuration);
@@ -107,8 +107,8 @@ namespace goheja
 			#endregion
 
 			#region Actions
-			zoomSlider.LowerValueChanged += HanelerGraphZoomChanged;
-			zoomSlider.UpperValueChanged += HanelerGraphZoomChanged;
+			//zoomSlider.LowerValueChanged += HanelerGraphZoomChanged;
+			//zoomSlider.UpperValueChanged += HanelerGraphZoomChanged;
 
 			mView.FindViewById<RelativeLayout>(Resource.Id.collapsCycle).Click += ActionCollepse;
 			mView.FindViewById<RelativeLayout>(Resource.Id.collapsRun).Click += ActionCollepse;
@@ -225,9 +225,9 @@ namespace goheja
 
 					mPChart.Series.Add(cSeries);
 
-					zoomSlider.SetRangeValues(0, pData.dataProvider.Count);
-					zoomSlider.SetSelectedMaxValue(pData.dataProvider.Count);
-					zoomSlider.SetSelectedMinValue(0);
+					//zoomSlider.SetRangeValues(0, pData.dataProvider.Count);
+					//zoomSlider.SetSelectedMaxValue(pData.dataProvider.Count);
+					//zoomSlider.SetSelectedMinValue(0);
 				}
 				#endregion
 
@@ -377,24 +377,24 @@ namespace goheja
 		}
 		#endregion
 
-		#region Handler
-		void HanelerGraphZoomChanged(object sender, EventArgs e)
-		{
-			try
-			{
-				var rSlider = sender as RangeSliderControl;
+		//#region Handler
+		//void HanelerGraphZoomChanged(object sender, EventArgs e)
+		//{
+		//	try
+		//	{
+		//		var rSlider = sender as RangeSliderControl;
 
-				var gZoomLevel = (rSlider.GetSelectedMaxValue() - rSlider.GetSelectedMinValue()) / rSlider.GetAbsoluteMaxValue();
-				mPChart.AxisX.Scale = gZoomLevel;
-				var posX = new Java.Lang.Double(rSlider.GetSelectedMinValue() * pData.dataProvider.Count);
-				mPChart.AxisX.ScrollTo(posX, Position.Max);
-			}
-			catch (Exception err)
-			{
-				Toast.MakeText(Activity, err.ToString(), ToastLength.Long).Show();
-			}
-		}
-		#endregion
+		//		var gZoomLevel = (rSlider.GetSelectedMaxValue() - rSlider.GetSelectedMinValue()) / rSlider.GetAbsoluteMaxValue();
+		//		mPChart.AxisX.Scale = gZoomLevel;
+		//		var posX = new Java.Lang.Double(rSlider.GetSelectedMinValue() * pData.dataProvider.Count);
+		//		mPChart.AxisX.ScrollTo(posX, Position.Max);
+		//	}
+		//	catch (Exception err)
+		//	{
+		//		Toast.MakeText(Activity, err.ToString(), ToastLength.Long).Show();
+		//	}
+		//}
+		//#endregion
 	}
 
 #region custom tooltip

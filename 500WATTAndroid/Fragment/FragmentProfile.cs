@@ -242,7 +242,7 @@ namespace goheja
 			}
 			catch (Exception err)
 			{
-				Toast.MakeText(Activity, err.ToString(), ToastLength.Long).Show();
+				//Toast.MakeText(Activity, err.ToString(), ToastLength.Long).Show();
 			}
         }
     }

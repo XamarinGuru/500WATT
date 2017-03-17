@@ -76,6 +76,10 @@ namespace location2
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel txtUsername { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView viewErrorEmail { get; set; }
 
         [Outlet]
@@ -185,6 +189,11 @@ namespace location2
             if (txtPassword != null) {
                 txtPassword.Dispose ();
                 txtPassword = null;
+            }
+
+            if (txtUsername != null) {
+                txtUsername.Dispose ();
+                txtUsername = null;
             }
 
             if (viewErrorEmail != null) {

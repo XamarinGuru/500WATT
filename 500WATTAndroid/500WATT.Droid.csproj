@@ -111,14 +111,14 @@
     <Reference Include="AndHUD">
       <HintPath>..\Components\AndHUD-1.3.1\lib\android\AndHUD.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.Controls.RangeSlider.Android">
-      <HintPath>..\Components\rangeslider-1.1.0.3\lib\android\Xamarin.Controls.RangeSlider.Android.dll</HintPath>
-    </Reference>
     <Reference Include="Xamarin.RangeSlider.Common">
       <HintPath>..\packages\Xamarin.RangeSlider.0.6.14\lib\MonoAndroid10\Xamarin.RangeSlider.Common.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.RangeSlider.Droid">
       <HintPath>..\packages\Xamarin.RangeSlider.0.6.14\lib\MonoAndroid10\Xamarin.RangeSlider.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentRangeSlider">
+      <HintPath>..\Components\CustomizableRangeSlider-1.0.0\lib\android\ComponentRangeSlider.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -299,11 +299,6 @@
     <AndroidResource Include="Resources\layout\SelectPTypeActivity.axml" />
     <AndroidResource Include="Resources\drawable\bg_performance.png" />
     <AndroidResource Include="Resources\values\attr.xml" />
-    <AndroidResource Include="Resources\drawable\seek_thumb_disabled.png" />
-    <AndroidResource Include="Resources\drawable\seek_thumb_normal.png" />
-    <AndroidResource Include="Resources\drawable\seek_thumb_pressed.png" />
-    <AndroidResource Include="Resources\drawable\icon_seek_thumb_act.png" />
-    <AndroidResource Include="Resources\drawable\icon_seek_thumb_dis.png" />
     <AndroidResource Include="Resources\drawable\icon_home.png" />
     <None Include="Web References\trackSvc\Service1.xsd" />
     <None Include="Web References\trackSvc\Service10.xsd" />
@@ -316,6 +311,7 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <AndroidResource Include="Resources\drawable\timer_new.png" />
+    <AndroidResource Include="Resources\drawable\icon_thumb_slider.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />
@@ -353,8 +349,8 @@
       <Version>1.3.1</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
-    <XamarinComponentReference Include="rangeslider">
-      <Version>1.1.0.3</Version>
+    <XamarinComponentReference Include="CustomizableRangeSlider">
+      <Version>1.0.0</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
   </ItemGroup>
