@@ -215,8 +215,8 @@ namespace goheja
 			}
 			else//if the user already registered, go to main screen
 			{
-				var activity2 = new Intent(this, typeof(SwipeTabActivity));
-				StartActivity(activity2);
+				var activity = new Intent(this, typeof(SwipeTabActivity));
+				StartActivityForResult(activity, 1);
 				Finish();
 			}
 		}

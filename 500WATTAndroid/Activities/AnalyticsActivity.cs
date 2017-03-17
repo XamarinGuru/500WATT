@@ -176,24 +176,31 @@ namespace goheja
 		{
 			var currentLocation = GetGPSLocation();
 
-			MarkerOptions markerOpt = new MarkerOptions();
-			markerOpt.SetPosition(new LatLng(currentLocation.Latitude, currentLocation.Longitude));
-
-			var metrics = Resources.DisplayMetrics;
-			var wScreen = metrics.WidthPixels;
-
-			Bitmap bmp = BitmapFactory.DecodeResource(Resources, Resource.Drawable.pin_me);
-			Bitmap newBitmap = ScaleDownImg(bmp, wScreen / 10, true);
-			markerOpt.SetIcon(BitmapDescriptorFactory.FromBitmap(newBitmap));
-
-			RunOnUiThread(() =>
+			try
 			{
-				markerMyLocation = mMapView.AddMarker(markerOpt);
-			});
+				MarkerOptions markerOpt = new MarkerOptions();
+				markerOpt.SetPosition(new LatLng(currentLocation.Latitude, currentLocation.Longitude));
 
-			SetMapPosition(new LatLng(currentLocation.Latitude, currentLocation.Longitude));
+				var metrics = Resources.DisplayMetrics;
+				var wScreen = metrics.WidthPixels;
 
-			SetNearestEventMarkers(currentLocation);
+				Bitmap bmp = BitmapFactory.DecodeResource(Resources, Resource.Drawable.pin_me);
+				Bitmap newBitmap = ScaleDownImg(bmp, wScreen / 10, true);
+				markerOpt.SetIcon(BitmapDescriptorFactory.FromBitmap(newBitmap));
+
+				RunOnUiThread(() =>
+				{
+					markerMyLocation = mMapView.AddMarker(markerOpt);
+				});
+
+				SetMapPosition(new LatLng(currentLocation.Latitude, currentLocation.Longitude));
+
+				SetNearestEventMarkers(currentLocation);
+			}
+			catch (Exception err)
+			{
+				Toast.MakeText(this, err.ToString(), ToastLength.Long).Show();
+			}
 		}
 
 		void SetNearestEventMarkers(Location currentLocation)
@@ -209,45 +216,59 @@ namespace goheja
 
 				if (mEventMarker == null || mEventMarker.markers.Count == 0) return;
 
-				var mapBounds = new LatLngBounds.Builder();
-
-				mapBounds.Include(new LatLng(currentLocation.Latitude, currentLocation.Longitude));
-
-				pointIDs = new List<string>();
-
-				RunOnUiThread(() =>
+				try
 				{
-					for (int i = 0; i < mEventMarker.markers.Count; i++)
+					var mapBounds = new LatLngBounds.Builder();
+
+					mapBounds.Include(new LatLng(currentLocation.Latitude, currentLocation.Longitude));
+
+					pointIDs = new List<string>();
+
+					RunOnUiThread(() =>
 					{
-						var point = mEventMarker.markers[i];
-						var pointLocation = new LatLng(point.lat, point.lng);
-						mapBounds.Include(pointLocation);
+						for (int i = 0; i < mEventMarker.markers.Count; i++)
+						{
+							var point = mEventMarker.markers[i];
+							var pointLocation = new LatLng(point.lat, point.lng);
+							mapBounds.Include(pointLocation);
 
-						AddMapPin(pointLocation, point.type);
-					}
+							AddMapPin(pointLocation, point.type);
+						}
 
-					mMapView.MoveCamera(CameraUpdateFactory.NewLatLngBounds(mapBounds.Build(), 50));
-				});
+						mMapView.MoveCamera(CameraUpdateFactory.NewLatLngBounds(mapBounds.Build(), 50));
+					});
+				}
+				catch (Exception err)
+				{
+					Toast.MakeText(this, err.ToString(), ToastLength.Long).Show();
+				}
 			});
 		}
 
 		void AddMapPin(LatLng position, string type)
 		{
-			MarkerOptions markerOpt = new MarkerOptions();
-			markerOpt.SetPosition(position);
-
-			var metrics = Resources.DisplayMetrics;
-			var wScreen = metrics.WidthPixels;
-
-			Bitmap bmp = GetPinIconByType(type);
-			Bitmap newBitmap = ScaleDownImg(bmp, wScreen / 7, true);
-			markerOpt.SetIcon(BitmapDescriptorFactory.FromBitmap(newBitmap));
-
-			RunOnUiThread(() =>
+			try
 			{
-				var marker = mMapView.AddMarker(markerOpt);
-				pointIDs.Add(marker.Id);
-			});
+				MarkerOptions markerOpt = new MarkerOptions();
+				markerOpt.SetPosition(position);
+
+				var metrics = Resources.DisplayMetrics;
+				var wScreen = metrics.WidthPixels;
+
+				Bitmap bmp = GetPinIconByType(type);
+				Bitmap newBitmap = ScaleDownImg(bmp, wScreen / 7, true);
+				markerOpt.SetIcon(BitmapDescriptorFactory.FromBitmap(newBitmap));
+
+				RunOnUiThread(() =>
+				{
+					var marker = mMapView.AddMarker(markerOpt);
+					pointIDs.Add(marker.Id);
+				});
+			}
+			catch (Exception err)
+			{
+				Toast.MakeText(this, err.ToString(), ToastLength.Long).Show();
+			}
 		}
 
 		public bool OnMarkerClick(Marker marker)
@@ -281,7 +302,7 @@ namespace goheja
         {
 			if (!_locationManager.IsProviderEnabled(LocationManager.GpsProvider))
 			{
-				ShowMessageBox(null, "You can't play Sport Comp wihtout GPS location service.");
+				ShowMessageBox(null, Constants.MSG_GPS_DISABLED);
 				return;
 			}
 
@@ -307,8 +328,9 @@ namespace goheja
 
 					svc.updateMomgoData(name, loc, dt, true, AppSettings.DeviceUDID, 0f, true, AppSettings.UserID, country, dist, true, gainAlt, true, _currentLocation.Bearing, true, 1, true, pType.ToString(), Constants.SPEC_GROUP_TYPE);
 				}
-				catch
+				catch (Exception err)
 				{
+					//Toast.MakeText(this, err.ToString(), ToastLength.Long).Show();
 				}
 			}
 			else if (pState == PRACTICE_STATE.playing)
@@ -362,7 +384,7 @@ namespace goheja
 			}
 			else
 			{
-				ShowMessageBox(null, "You sure you want to stop practice?", "Cancel", new[] { "OK" }, StopPractice);
+				ShowMessageBox(null, Constants.MSG_COMFIRM_STOP_SPORT_COMP, "Cancel", new[] { "OK" }, StopPractice);
 			}
 		}
         private void ActionStop(object sender, EventArgs e)
@@ -402,9 +424,7 @@ namespace goheja
 
 			_locationManager.RemoveUpdates(this);
 
-			var activity = new Intent(this, typeof(SwipeTabActivity));
-			StartActivity(activity);
-			Finish();
+			ActionBackCancel();
 		}
 
 
