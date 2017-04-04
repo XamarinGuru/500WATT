@@ -26,6 +26,13 @@ namespace location2
 			imagePicker.MediaTypes = UIImagePickerController.AvailableMediaTypes(UIImagePickerControllerSourceType.PhotoLibrary);
 			imagePicker.FinishedPickingMedia += Handle_FinishedPickingMedia;
 			imagePicker.Canceled += Handle_Canceled;
+
+			InitUISettings();
+		}
+
+		void InitUISettings()
+		{
+
 		}
 
 		async public override void ViewWillAppear(bool animated)

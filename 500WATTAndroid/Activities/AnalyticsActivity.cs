@@ -197,9 +197,9 @@ namespace goheja
 
 				SetNearestEventMarkers(currentLocation);
 			}
-			catch (Exception err)
+			catch (Exception ex)
 			{
-				Toast.MakeText(this, err.ToString(), ToastLength.Long).Show();
+				ShowTrackMessageBox(ex.Message);
 			}
 		}
 
@@ -214,7 +214,7 @@ namespace goheja
 
 				HideLoadingView();
 
-				if (mEventMarker == null || mEventMarker.markers.Count == 0) return;
+				if (mEventMarker == null || mEventMarker.markers == null || mEventMarker.markers.Count == 0) return;
 
 				try
 				{
@@ -238,9 +238,9 @@ namespace goheja
 						mMapView.MoveCamera(CameraUpdateFactory.NewLatLngBounds(mapBounds.Build(), 50));
 					});
 				}
-				catch (Exception err)
+				catch (Exception ex)
 				{
-					Toast.MakeText(this, err.ToString(), ToastLength.Long).Show();
+					ShowTrackMessageBox(ex.Message);
 				}
 			});
 		}
@@ -265,9 +265,9 @@ namespace goheja
 					pointIDs.Add(marker.Id);
 				});
 			}
-			catch (Exception err)
+			catch (Exception ex)
 			{
-				Toast.MakeText(this, err.ToString(), ToastLength.Long).Show();
+				ShowTrackMessageBox(ex.Message);
 			}
 		}
 
@@ -286,9 +286,9 @@ namespace goheja
 				PointInfoDialog myDiag = PointInfoDialog.newInstance(selectedPoint);
 				myDiag.Show(FragmentManager, "Diag");
 			}
-			catch
+			catch(Exception ex)
 			{
-				return true;
+				ShowTrackMessageBox(ex.Message);
 			}
 
 			return true;
@@ -384,7 +384,7 @@ namespace goheja
 			}
 			else
 			{
-				ShowMessageBox(null, Constants.MSG_COMFIRM_STOP_SPORT_COMP, "Cancel", new[] { "OK" }, StopPractice);
+				ShowMessageBox(null, Constants.MSG_COMFIRM_STOP_SPORT_COMP, "OK", "Cancel", StopPractice);
 			}
 		}
         private void ActionStop(object sender, EventArgs e)
@@ -451,7 +451,7 @@ namespace goheja
 
 			if (ShouldShowRequestPermissionRationale(permission))
 			{
-				ShowMessageBox(null, "Location access is required to gaugo your sports.", "Cancel", new[] { "OK" }, SendingPermissionRequest);
+				ShowMessageBox(null, "Location access is required to gaugo your sports.", "OK", "Cancel", SendingPermissionRequest);
 				return;
 			}
 			SendingPermissionRequest();
