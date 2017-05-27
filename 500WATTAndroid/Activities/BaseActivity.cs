@@ -169,7 +169,7 @@ namespace goheja
 
 			ShowLoadingView(Constants.MSG_TRAKING_ERROR);
 
-			mTrackSvc.specLog(msg);
+			//mTrackSvc.specLog(msg);
 
 			HideLoadingView();
 
