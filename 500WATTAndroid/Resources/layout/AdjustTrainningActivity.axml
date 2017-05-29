@@ -158,11 +158,11 @@
                     android:layout_height="match_parent"
                     android:id="@+id/ActionTimeChanged"
                     android:layout_weight="5"
-                    android:thumbTint="#EBAF01"
+                    android:thumbTint="#DA251C"
                     android:progress="0"
                     android:max="3600"
-                    android:progressTint="#ffe5a109"
-                    android:progressBackgroundTint="#ff40403e" />
+                    android:progressTint="#DA251C"
+                    android:progressBackgroundTint="#DA251C" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="horizontal"
@@ -206,11 +206,11 @@
                     android:layout_height="match_parent"
                     android:id="@+id/ActionDistanceChanged"
                     android:layout_weight="5"
-                    android:thumbTint="#EBAF01"
+                    android:thumbTint="#DA251C"
                     android:progress="0"
                     android:max="2500"
-                    android:progressTint="#ffe5a109"
-                    android:progressBackgroundTint="#ff40403e" />
+                    android:progressTint="#DA251C"
+                    android:progressBackgroundTint="#DA251C" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="horizontal"
@@ -254,11 +254,11 @@
                     android:layout_height="match_parent"
                     android:id="@+id/ActionTSSChanged"
                     android:layout_weight="5"
-                    android:thumbTint="#EBAF01"
+                    android:thumbTint="#DA251C"
                     android:progress="0"
                     android:max="4000"
-                    android:progressTint="#ffe5a109"
-                    android:progressBackgroundTint="#ff40403e" />
+                    android:progressTint="#DA251C"
+                    android:progressBackgroundTint="#DA251C" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="horizontal"
