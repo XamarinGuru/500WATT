@@ -18,11 +18,15 @@ namespace goheja.trackSvc {
     
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Web.Services.WebServiceBindingAttribute(Name="BasicHttpBinding_IService1", Namespace="http://tempuri.org/")]
     public partial class Service1 : System.Web.Services.Protocols.SoapHttpClientProtocol {
+        
+        private System.Threading.SendOrPostCallback decodeFitFileOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback mobLoginOperationCompleted;
         
         private System.Threading.SendOrPostCallback updateMomgoDataOperationCompleted;
         
@@ -50,6 +54,10 @@ namespace goheja.trackSvc {
         
         private System.Threading.SendOrPostCallback resetEventTimeOperationCompleted;
         
+        private System.Threading.SendOrPostCallback attendanceListOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback coachUpdateAttendanceOperationCompleted;
+        
         private System.Threading.SendOrPostCallback updateMarkerOperationCompleted;
         
         private System.Threading.SendOrPostCallback testPmcOperationCompleted;
@@ -63,6 +71,8 @@ namespace goheja.trackSvc {
         private System.Threading.SendOrPostCallback getAllMarkersByPracticeOperationCompleted;
         
         private System.Threading.SendOrPostCallback athGeneralListOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback athGeneralListMobOperationCompleted;
         
         private System.Threading.SendOrPostCallback insertMultiToGroupOperationCompleted;
         
@@ -150,11 +160,19 @@ namespace goheja.trackSvc {
         
         private System.Threading.SendOrPostCallback getStartMarkerPositionOperationCompleted;
         
+        private System.Threading.SendOrPostCallback sendAttendanceMailOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback specLogOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback IsAuthOperationCompleted;
+        
         private System.Threading.SendOrPostCallback getEventDateNameIdOperationCompleted;
         
         private System.Threading.SendOrPostCallback groupResultsMongoOperationCompleted;
         
         private System.Threading.SendOrPostCallback getPerformanceFordateOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback sendNotificationExceedingOperationCompleted;
         
         private System.Threading.SendOrPostCallback getMyTrailForEventMongoOperationCompleted;
         
@@ -204,6 +222,8 @@ namespace goheja.trackSvc {
         
         private System.Threading.SendOrPostCallback fieldAthletsAndEvenetsOperationCompleted;
         
+        private System.Threading.SendOrPostCallback fieldAthletsAndEvenetsMobOperationCompleted;
+        
         private System.Threading.SendOrPostCallback updateMomgoGroupsOperationCompleted;
         
         private System.Threading.SendOrPostCallback removeAthFromGroupOperationCompleted;
@@ -234,6 +254,8 @@ namespace goheja.trackSvc {
         
         private System.Threading.SendOrPostCallback validatSyncOperationCompleted;
         
+        private System.Threading.SendOrPostCallback sismaOperationCompleted;
+        
         private System.Threading.SendOrPostCallback getUsrGroupOperationCompleted;
         
         private System.Threading.SendOrPostCallback updateAthPersonalDataOperationCompleted;
@@ -246,6 +268,12 @@ namespace goheja.trackSvc {
         public Service1(string url) {
             this.Url = url;
         }
+        
+        /// CodeRemarks
+        public event decodeFitFileCompletedEventHandler decodeFitFileCompleted;
+        
+        /// CodeRemarks
+        public event mobLoginCompletedEventHandler mobLoginCompleted;
         
         /// CodeRemarks
         public event updateMomgoDataCompletedEventHandler updateMomgoDataCompleted;
@@ -287,6 +315,12 @@ namespace goheja.trackSvc {
         public event resetEventTimeCompletedEventHandler resetEventTimeCompleted;
         
         /// CodeRemarks
+        public event attendanceListCompletedEventHandler attendanceListCompleted;
+        
+        /// CodeRemarks
+        public event coachUpdateAttendanceCompletedEventHandler coachUpdateAttendanceCompleted;
+        
+        /// CodeRemarks
         public event updateMarkerCompletedEventHandler updateMarkerCompleted;
         
         /// CodeRemarks
@@ -306,6 +340,9 @@ namespace goheja.trackSvc {
         
         /// CodeRemarks
         public event athGeneralListCompletedEventHandler athGeneralListCompleted;
+        
+        /// CodeRemarks
+        public event athGeneralListMobCompletedEventHandler athGeneralListMobCompleted;
         
         /// CodeRemarks
         public event insertMultiToGroupCompletedEventHandler insertMultiToGroupCompleted;
@@ -437,6 +474,15 @@ namespace goheja.trackSvc {
         public event getStartMarkerPositionCompletedEventHandler getStartMarkerPositionCompleted;
         
         /// CodeRemarks
+        public event sendAttendanceMailCompletedEventHandler sendAttendanceMailCompleted;
+        
+        /// CodeRemarks
+        public event specLogCompletedEventHandler specLogCompleted;
+        
+        /// CodeRemarks
+        public event IsAuthCompletedEventHandler IsAuthCompleted;
+        
+        /// CodeRemarks
         public event getEventDateNameIdCompletedEventHandler getEventDateNameIdCompleted;
         
         /// CodeRemarks
@@ -444,6 +490,9 @@ namespace goheja.trackSvc {
         
         /// CodeRemarks
         public event getPerformanceFordateCompletedEventHandler getPerformanceFordateCompleted;
+        
+        /// CodeRemarks
+        public event sendNotificationExceedingCompletedEventHandler sendNotificationExceedingCompleted;
         
         /// CodeRemarks
         public event getMyTrailForEventMongoCompletedEventHandler getMyTrailForEventMongoCompleted;
@@ -518,6 +567,9 @@ namespace goheja.trackSvc {
         public event fieldAthletsAndEvenetsCompletedEventHandler fieldAthletsAndEvenetsCompleted;
         
         /// CodeRemarks
+        public event fieldAthletsAndEvenetsMobCompletedEventHandler fieldAthletsAndEvenetsMobCompleted;
+        
+        /// CodeRemarks
         public event updateMomgoGroupsCompletedEventHandler updateMomgoGroupsCompleted;
         
         /// CodeRemarks
@@ -563,10 +615,83 @@ namespace goheja.trackSvc {
         public event validatSyncCompletedEventHandler validatSyncCompleted;
         
         /// CodeRemarks
+        public event sismaCompletedEventHandler sismaCompleted;
+        
+        /// CodeRemarks
         public event getUsrGroupCompletedEventHandler getUsrGroupCompleted;
         
         /// CodeRemarks
         public event updateAthPersonalDataCompletedEventHandler updateAthPersonalDataCompleted;
+        
+        /// CodeRemarks
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/decodeFitFile", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void decodeFitFile([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string fileNamePath, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string userId, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string uploadId, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string specGroup, out bool decodeFitFileResult, [System.Xml.Serialization.XmlIgnoreAttribute()] out bool decodeFitFileResultSpecified) {
+            object[] results = this.Invoke("decodeFitFile", new object[] {
+                        fileNamePath,
+                        userId,
+                        uploadId,
+                        specGroup});
+            decodeFitFileResult = ((bool)(results[0]));
+            decodeFitFileResultSpecified = ((bool)(results[1]));
+        }
+        
+        /// CodeRemarks
+        public void decodeFitFileAsync(string fileNamePath, string userId, string uploadId, string specGroup) {
+            this.decodeFitFileAsync(fileNamePath, userId, uploadId, specGroup, null);
+        }
+        
+        /// CodeRemarks
+        public void decodeFitFileAsync(string fileNamePath, string userId, string uploadId, string specGroup, object userState) {
+            if ((this.decodeFitFileOperationCompleted == null)) {
+                this.decodeFitFileOperationCompleted = new System.Threading.SendOrPostCallback(this.OndecodeFitFileOperationCompleted);
+            }
+            this.InvokeAsync("decodeFitFile", new object[] {
+                        fileNamePath,
+                        userId,
+                        uploadId,
+                        specGroup}, this.decodeFitFileOperationCompleted, userState);
+        }
+        
+        private void OndecodeFitFileOperationCompleted(object arg) {
+            if ((this.decodeFitFileCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.decodeFitFileCompleted(this, new decodeFitFileCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// CodeRemarks
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/mobLogin", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public object mobLogin([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string mail, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string psw, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string specGroup) {
+            object[] results = this.Invoke("mobLogin", new object[] {
+                        mail,
+                        psw,
+                        specGroup});
+            return ((object)(results[0]));
+        }
+        
+        /// CodeRemarks
+        public void mobLoginAsync(string mail, string psw, string specGroup) {
+            this.mobLoginAsync(mail, psw, specGroup, null);
+        }
+        
+        /// CodeRemarks
+        public void mobLoginAsync(string mail, string psw, string specGroup, object userState) {
+            if ((this.mobLoginOperationCompleted == null)) {
+                this.mobLoginOperationCompleted = new System.Threading.SendOrPostCallback(this.OnmobLoginOperationCompleted);
+            }
+            this.InvokeAsync("mobLogin", new object[] {
+                        mail,
+                        psw,
+                        specGroup}, this.mobLoginOperationCompleted, userState);
+        }
+        
+        private void OnmobLoginOperationCompleted(object arg) {
+            if ((this.mobLoginCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.mobLoginCompleted(this, new mobLoginCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// CodeRemarks
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/updateMomgoData", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -1111,6 +1236,82 @@ namespace goheja.trackSvc {
         }
         
         /// CodeRemarks
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/attendanceList", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public object attendanceList([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string eventId, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string specGroup) {
+            object[] results = this.Invoke("attendanceList", new object[] {
+                        eventId,
+                        specGroup});
+            return ((object)(results[0]));
+        }
+        
+        /// CodeRemarks
+        public void attendanceListAsync(string eventId, string specGroup) {
+            this.attendanceListAsync(eventId, specGroup, null);
+        }
+        
+        /// CodeRemarks
+        public void attendanceListAsync(string eventId, string specGroup, object userState) {
+            if ((this.attendanceListOperationCompleted == null)) {
+                this.attendanceListOperationCompleted = new System.Threading.SendOrPostCallback(this.OnattendanceListOperationCompleted);
+            }
+            this.InvokeAsync("attendanceList", new object[] {
+                        eventId,
+                        specGroup}, this.attendanceListOperationCompleted, userState);
+        }
+        
+        private void OnattendanceListOperationCompleted(object arg) {
+            if ((this.attendanceListCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.attendanceListCompleted(this, new attendanceListCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// CodeRemarks
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/coachUpdateAttendance", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void coachUpdateAttendance([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string eventId, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string userId, int attendance, [System.Xml.Serialization.XmlIgnoreAttribute()] bool attendanceSpecified, int reson, [System.Xml.Serialization.XmlIgnoreAttribute()] bool resonSpecified, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string note, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string specGroup, out bool coachUpdateAttendanceResult, [System.Xml.Serialization.XmlIgnoreAttribute()] out bool coachUpdateAttendanceResultSpecified) {
+            object[] results = this.Invoke("coachUpdateAttendance", new object[] {
+                        eventId,
+                        userId,
+                        attendance,
+                        attendanceSpecified,
+                        reson,
+                        resonSpecified,
+                        note,
+                        specGroup});
+            coachUpdateAttendanceResult = ((bool)(results[0]));
+            coachUpdateAttendanceResultSpecified = ((bool)(results[1]));
+        }
+        
+        /// CodeRemarks
+        public void coachUpdateAttendanceAsync(string eventId, string userId, int attendance, bool attendanceSpecified, int reson, bool resonSpecified, string note, string specGroup) {
+            this.coachUpdateAttendanceAsync(eventId, userId, attendance, attendanceSpecified, reson, resonSpecified, note, specGroup, null);
+        }
+        
+        /// CodeRemarks
+        public void coachUpdateAttendanceAsync(string eventId, string userId, int attendance, bool attendanceSpecified, int reson, bool resonSpecified, string note, string specGroup, object userState) {
+            if ((this.coachUpdateAttendanceOperationCompleted == null)) {
+                this.coachUpdateAttendanceOperationCompleted = new System.Threading.SendOrPostCallback(this.OncoachUpdateAttendanceOperationCompleted);
+            }
+            this.InvokeAsync("coachUpdateAttendance", new object[] {
+                        eventId,
+                        userId,
+                        attendance,
+                        attendanceSpecified,
+                        reson,
+                        resonSpecified,
+                        note,
+                        specGroup}, this.coachUpdateAttendanceOperationCompleted, userState);
+        }
+        
+        private void OncoachUpdateAttendanceOperationCompleted(object arg) {
+            if ((this.coachUpdateAttendanceCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.coachUpdateAttendanceCompleted(this, new coachUpdateAttendanceCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// CodeRemarks
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/updateMarker", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         public object updateMarker([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string markerId, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string name, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string description, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string mLat, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string mLng, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string type, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string eventid, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string interval, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string specGroup) {
@@ -1357,6 +1558,38 @@ namespace goheja.trackSvc {
             if ((this.athGeneralListCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.athGeneralListCompleted(this, new athGeneralListCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// CodeRemarks
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/athGeneralListMob", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public object athGeneralListMob([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string token, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string specGroup) {
+            object[] results = this.Invoke("athGeneralListMob", new object[] {
+                        token,
+                        specGroup});
+            return ((object)(results[0]));
+        }
+        
+        /// CodeRemarks
+        public void athGeneralListMobAsync(string token, string specGroup) {
+            this.athGeneralListMobAsync(token, specGroup, null);
+        }
+        
+        /// CodeRemarks
+        public void athGeneralListMobAsync(string token, string specGroup, object userState) {
+            if ((this.athGeneralListMobOperationCompleted == null)) {
+                this.athGeneralListMobOperationCompleted = new System.Threading.SendOrPostCallback(this.OnathGeneralListMobOperationCompleted);
+            }
+            this.InvokeAsync("athGeneralListMob", new object[] {
+                        token,
+                        specGroup}, this.athGeneralListMobOperationCompleted, userState);
+        }
+        
+        private void OnathGeneralListMobOperationCompleted(object arg) {
+            if ((this.athGeneralListMobCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.athGeneralListMobCompleted(this, new athGeneralListMobCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -2950,6 +3183,94 @@ namespace goheja.trackSvc {
         }
         
         /// CodeRemarks
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/sendAttendanceMail", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void sendAttendanceMail() {
+            this.Invoke("sendAttendanceMail", new object[0]);
+        }
+        
+        /// CodeRemarks
+        public void sendAttendanceMailAsync() {
+            this.sendAttendanceMailAsync(null);
+        }
+        
+        /// CodeRemarks
+        public void sendAttendanceMailAsync(object userState) {
+            if ((this.sendAttendanceMailOperationCompleted == null)) {
+                this.sendAttendanceMailOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsendAttendanceMailOperationCompleted);
+            }
+            this.InvokeAsync("sendAttendanceMail", new object[0], this.sendAttendanceMailOperationCompleted, userState);
+        }
+        
+        private void OnsendAttendanceMailOperationCompleted(object arg) {
+            if ((this.sendAttendanceMailCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.sendAttendanceMailCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// CodeRemarks
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/specLog", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void specLog([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string message) {
+            this.Invoke("specLog", new object[] {
+                        message});
+        }
+        
+        /// CodeRemarks
+        public void specLogAsync(string message) {
+            this.specLogAsync(message, null);
+        }
+        
+        /// CodeRemarks
+        public void specLogAsync(string message, object userState) {
+            if ((this.specLogOperationCompleted == null)) {
+                this.specLogOperationCompleted = new System.Threading.SendOrPostCallback(this.OnspecLogOperationCompleted);
+            }
+            this.InvokeAsync("specLog", new object[] {
+                        message}, this.specLogOperationCompleted, userState);
+        }
+        
+        private void OnspecLogOperationCompleted(object arg) {
+            if ((this.specLogCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.specLogCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// CodeRemarks
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/IsAuth", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void IsAuth([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string email, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string psw, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string specGroup, out bool IsAuthResult, [System.Xml.Serialization.XmlIgnoreAttribute()] out bool IsAuthResultSpecified) {
+            object[] results = this.Invoke("IsAuth", new object[] {
+                        email,
+                        psw,
+                        specGroup});
+            IsAuthResult = ((bool)(results[0]));
+            IsAuthResultSpecified = ((bool)(results[1]));
+        }
+        
+        /// CodeRemarks
+        public void IsAuthAsync(string email, string psw, string specGroup) {
+            this.IsAuthAsync(email, psw, specGroup, null);
+        }
+        
+        /// CodeRemarks
+        public void IsAuthAsync(string email, string psw, string specGroup, object userState) {
+            if ((this.IsAuthOperationCompleted == null)) {
+                this.IsAuthOperationCompleted = new System.Threading.SendOrPostCallback(this.OnIsAuthOperationCompleted);
+            }
+            this.InvokeAsync("IsAuth", new object[] {
+                        email,
+                        psw,
+                        specGroup}, this.IsAuthOperationCompleted, userState);
+        }
+        
+        private void OnIsAuthOperationCompleted(object arg) {
+            if ((this.IsAuthCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.IsAuthCompleted(this, new IsAuthCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// CodeRemarks
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/getEventDateNameId", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         public string getEventDateNameId([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string eventId, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string specGroup) {
@@ -3050,6 +3371,36 @@ namespace goheja.trackSvc {
             if ((this.getPerformanceFordateCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.getPerformanceFordateCompleted(this, new getPerformanceFordateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// CodeRemarks
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/sendNotificationExceeding", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void sendNotificationExceeding([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string userId, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string specGroup) {
+            this.Invoke("sendNotificationExceeding", new object[] {
+                        userId,
+                        specGroup});
+        }
+        
+        /// CodeRemarks
+        public void sendNotificationExceedingAsync(string userId, string specGroup) {
+            this.sendNotificationExceedingAsync(userId, specGroup, null);
+        }
+        
+        /// CodeRemarks
+        public void sendNotificationExceedingAsync(string userId, string specGroup, object userState) {
+            if ((this.sendNotificationExceedingOperationCompleted == null)) {
+                this.sendNotificationExceedingOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsendNotificationExceedingOperationCompleted);
+            }
+            this.InvokeAsync("sendNotificationExceeding", new object[] {
+                        userId,
+                        specGroup}, this.sendNotificationExceedingOperationCompleted, userState);
+        }
+        
+        private void OnsendNotificationExceedingOperationCompleted(object arg) {
+            if ((this.sendNotificationExceedingCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.sendNotificationExceedingCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -3899,6 +4250,40 @@ namespace goheja.trackSvc {
         }
         
         /// CodeRemarks
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/fieldAthletsAndEvenetsMob", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public object fieldAthletsAndEvenetsMob([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string token, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string fieldId, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string specGroup) {
+            object[] results = this.Invoke("fieldAthletsAndEvenetsMob", new object[] {
+                        token,
+                        fieldId,
+                        specGroup});
+            return ((object)(results[0]));
+        }
+        
+        /// CodeRemarks
+        public void fieldAthletsAndEvenetsMobAsync(string token, string fieldId, string specGroup) {
+            this.fieldAthletsAndEvenetsMobAsync(token, fieldId, specGroup, null);
+        }
+        
+        /// CodeRemarks
+        public void fieldAthletsAndEvenetsMobAsync(string token, string fieldId, string specGroup, object userState) {
+            if ((this.fieldAthletsAndEvenetsMobOperationCompleted == null)) {
+                this.fieldAthletsAndEvenetsMobOperationCompleted = new System.Threading.SendOrPostCallback(this.OnfieldAthletsAndEvenetsMobOperationCompleted);
+            }
+            this.InvokeAsync("fieldAthletsAndEvenetsMob", new object[] {
+                        token,
+                        fieldId,
+                        specGroup}, this.fieldAthletsAndEvenetsMobOperationCompleted, userState);
+        }
+        
+        private void OnfieldAthletsAndEvenetsMobOperationCompleted(object arg) {
+            if ((this.fieldAthletsAndEvenetsMobCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.fieldAthletsAndEvenetsMobCompleted(this, new fieldAthletsAndEvenetsMobCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// CodeRemarks
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/updateMomgoGroups", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         public string updateMomgoGroups([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string groupName, int groupid, [System.Xml.Serialization.XmlIgnoreAttribute()] bool groupidSpecified, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string subGroupId, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string userNickName, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string userUrl, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string userImg, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string specGroup) {
@@ -4432,6 +4817,38 @@ namespace goheja.trackSvc {
         }
         
         /// CodeRemarks
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/sisma", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string sisma([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string mail, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string specGroup) {
+            object[] results = this.Invoke("sisma", new object[] {
+                        mail,
+                        specGroup});
+            return ((string)(results[0]));
+        }
+        
+        /// CodeRemarks
+        public void sismaAsync(string mail, string specGroup) {
+            this.sismaAsync(mail, specGroup, null);
+        }
+        
+        /// CodeRemarks
+        public void sismaAsync(string mail, string specGroup, object userState) {
+            if ((this.sismaOperationCompleted == null)) {
+                this.sismaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsismaOperationCompleted);
+            }
+            this.InvokeAsync("sisma", new object[] {
+                        mail,
+                        specGroup}, this.sismaOperationCompleted, userState);
+        }
+        
+        private void OnsismaOperationCompleted(object arg) {
+            if ((this.sismaCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.sismaCompleted(this, new sismaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// CodeRemarks
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/getUsrGroup", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         public string getUsrGroup([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string usr, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string psw, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string specGroup) {
@@ -4512,33 +4929,7 @@ namespace goheja.trackSvc {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/MongoDB.Bson")]
-    public partial class BsonValue {
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/MongoDB.Bson")]
-    public partial class BsonElement {
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string _name;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public BsonValue _value;
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4557,16 +4948,102 @@ namespace goheja.trackSvc {
         public string StringValue;
     }
     
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/MongoDB.Bson")]
+    public partial class BsonValue {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/MongoDB.Bson")]
+    public partial class BsonElement {
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string _name;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public BsonValue _value;
+    }
+    
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
+    public delegate void decodeFitFileCompletedEventHandler(object sender, decodeFitFileCompletedEventArgs e);
+    
+    /// CodeRemarks
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class decodeFitFileCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal decodeFitFileCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// CodeRemarks
+        public bool decodeFitFileResult {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+        
+        /// CodeRemarks
+        public bool decodeFitFileResultSpecified {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[1]));
+            }
+        }
+    }
+    
+    /// CodeRemarks
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
+    public delegate void mobLoginCompletedEventHandler(object sender, mobLoginCompletedEventArgs e);
+    
+    /// CodeRemarks
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class mobLoginCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal mobLoginCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// CodeRemarks
+        public object Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object)(this.results[0]));
+            }
+        }
+    }
+    
+    /// CodeRemarks
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void updateMomgoDataCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void syncSuunto60CompletedEventHandler(object sender, syncSuunto60CompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class syncSuunto60CompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -4596,11 +5073,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void installgCompletedEventHandler(object sender, installgCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class installgCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -4622,11 +5099,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void convertUsersCompletedEventHandler(object sender, convertUsersCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class convertUsersCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -4648,11 +5125,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void convertEventsCompletedEventHandler(object sender, convertEventsCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class convertEventsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -4674,11 +5151,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getCodeCompletedEventHandler(object sender, getCodeCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getCodeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -4700,11 +5177,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getMobTotalsGraphCompletedEventHandler(object sender, getMobTotalsGraphCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getMobTotalsGraphCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -4726,11 +5203,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void addPracticeCompletedEventHandler(object sender, addPracticeCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class addPracticeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -4752,11 +5229,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void setEventInCalendarCompletedEventHandler(object sender, setEventInCalendarCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class setEventInCalendarCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -4778,11 +5255,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void restPaswordCompletedEventHandler(object sender, restPaswordCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class restPaswordCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -4812,11 +5289,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getEventTotalsMobCompletedEventHandler(object sender, getEventTotalsMobCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getEventTotalsMobCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -4838,11 +5315,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getPracticeTotalsCompletedEventHandler(object sender, getPracticeTotalsCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getPracticeTotalsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -4864,11 +5341,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void resetEventTimeCompletedEventHandler(object sender, resetEventTimeCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class resetEventTimeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -4898,11 +5375,71 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
+    public delegate void attendanceListCompletedEventHandler(object sender, attendanceListCompletedEventArgs e);
+    
+    /// CodeRemarks
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class attendanceListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal attendanceListCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// CodeRemarks
+        public object Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object)(this.results[0]));
+            }
+        }
+    }
+    
+    /// CodeRemarks
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
+    public delegate void coachUpdateAttendanceCompletedEventHandler(object sender, coachUpdateAttendanceCompletedEventArgs e);
+    
+    /// CodeRemarks
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class coachUpdateAttendanceCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal coachUpdateAttendanceCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// CodeRemarks
+        public bool coachUpdateAttendanceResult {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+        
+        /// CodeRemarks
+        public bool coachUpdateAttendanceResultSpecified {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[1]));
+            }
+        }
+    }
+    
+    /// CodeRemarks
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void updateMarkerCompletedEventHandler(object sender, updateMarkerCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class updateMarkerCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -4924,11 +5461,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void testPmcCompletedEventHandler(object sender, testPmcCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class testPmcCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -4958,11 +5495,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getTrackPointsCompletedEventHandler(object sender, getTrackPointsCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getTrackPointsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -4984,11 +5521,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getGroupsCompletedEventHandler(object sender, getGroupsCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getGroupsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -5010,11 +5547,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getCoachWeekTotalsCompletedEventHandler(object sender, getCoachWeekTotalsCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getCoachWeekTotalsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -5036,11 +5573,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getAllMarkersByPracticeCompletedEventHandler(object sender, getAllMarkersByPracticeCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getAllMarkersByPracticeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -5062,11 +5599,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void athGeneralListCompletedEventHandler(object sender, athGeneralListCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class athGeneralListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -5088,11 +5625,37 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
+    public delegate void athGeneralListMobCompletedEventHandler(object sender, athGeneralListMobCompletedEventArgs e);
+    
+    /// CodeRemarks
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class athGeneralListMobCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal athGeneralListMobCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// CodeRemarks
+        public object Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object)(this.results[0]));
+            }
+        }
+    }
+    
+    /// CodeRemarks
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void insertMultiToGroupCompletedEventHandler(object sender, insertMultiToGroupCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class insertMultiToGroupCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -5122,11 +5685,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getEventReportCompletedEventHandler(object sender, getEventReportCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getEventReportCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -5148,15 +5711,15 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void updateMomgoDataFromFoxiCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void athGaugesCompletedEventHandler(object sender, athGaugesCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class athGaugesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -5178,11 +5741,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getFutureEventCompletedEventHandler(object sender, getFutureEventCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getFutureEventCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -5204,11 +5767,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void updateMomgoCalendarCompletedEventHandler(object sender, updateMomgoCalendarCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class updateMomgoCalendarCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -5230,11 +5793,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void updateGarminDataCompletedEventHandler(object sender, updateGarminDataCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class updateGarminDataCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -5264,11 +5827,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getGraphDataCompletedEventHandler(object sender, getGraphDataCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getGraphDataCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -5290,11 +5853,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void athCurrDataMongoCompletedEventHandler(object sender, athCurrDataMongoCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class athCurrDataMongoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -5316,11 +5879,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getAthNameByIdCompletedEventHandler(object sender, getAthNameByIdCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getAthNameByIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -5342,11 +5905,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void GetDataUsingDataContractCompletedEventHandler(object sender, GetDataUsingDataContractCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetDataUsingDataContractCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -5368,11 +5931,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void deleteMarkerCompletedEventHandler(object sender, deleteMarkerCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class deleteMarkerCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -5394,11 +5957,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void addMarkerCompletedEventHandler(object sender, addMarkerCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class addMarkerCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -5420,11 +5983,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void validateNickNameCompletedEventHandler(object sender, validateNickNameCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class validateNickNameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -5446,11 +6009,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getAllMarkersByIdCompletedEventHandler(object sender, getAllMarkersByIdCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getAllMarkersByIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -5472,11 +6035,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void createEventCompletedEventHandler(object sender, createEventCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class createEventCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -5498,11 +6061,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void updateEventCompletedEventHandler(object sender, updateEventCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class updateEventCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -5524,11 +6087,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void deleteEventCompletedEventHandler(object sender, deleteEventCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class deleteEventCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -5550,11 +6113,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getEventIdByNameCompletedEventHandler(object sender, getEventIdByNameCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getEventIdByNameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -5576,11 +6139,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getEventIdByNameForMarkersCompletedEventHandler(object sender, getEventIdByNameForMarkersCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getEventIdByNameForMarkersCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -5602,11 +6165,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getcurrentEventByDateCompletedEventHandler(object sender, getcurrentEventByDateCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getcurrentEventByDateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -5628,11 +6191,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getEventNameByIdCompletedEventHandler(object sender, getEventNameByIdCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getEventNameByIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -5654,11 +6217,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getErrprFromMobileCompletedEventHandler(object sender, getErrprFromMobileCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getErrprFromMobileCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -5688,11 +6251,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getEventMobCompletedEventHandler(object sender, getEventMobCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getEventMobCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -5714,11 +6277,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void updatePracticeCompletedEventHandler(object sender, updatePracticeCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class updatePracticeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -5740,11 +6303,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void insertNewProgramCompletedEventHandler(object sender, insertNewProgramCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class insertNewProgramCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -5766,11 +6329,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void populateProgramCompletedEventHandler(object sender, populateProgramCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class populateProgramCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -5800,11 +6363,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void updateProgramsJsonCompletedEventHandler(object sender, updateProgramsJsonCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class updateProgramsJsonCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -5834,11 +6397,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void athCurrDataByDeviceIdCompletedEventHandler(object sender, athCurrDataByDeviceIdCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class athCurrDataByDeviceIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -5860,11 +6423,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getGaugeCompletedEventHandler(object sender, getGaugeCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getGaugeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -5886,11 +6449,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getGaugeMobCompletedEventHandler(object sender, getGaugeMobCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getGaugeMobCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -5912,11 +6475,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void checkProgramNameCompletedEventHandler(object sender, checkProgramNameCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class checkProgramNameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -5938,11 +6501,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getProgramCompletedEventHandler(object sender, getProgramCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getProgramCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -5964,11 +6527,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void saveUserImageCompletedEventHandler(object sender, saveUserImageCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class saveUserImageCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -5990,11 +6553,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void deleteProgramCompletedEventHandler(object sender, deleteProgramCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class deleteProgramCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6016,11 +6579,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getListedDeviceIdCompletedEventHandler(object sender, getListedDeviceIdCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getListedDeviceIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6042,11 +6605,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void attendReportCompletedEventHandler(object sender, attendReportCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class attendReportCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6068,11 +6631,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void programsListCompletedEventHandler(object sender, programsListCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class programsListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6094,11 +6657,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void eventsListCompletedEventHandler(object sender, eventsListCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class eventsListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6120,11 +6683,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void insertNewDeviceCompletedEventHandler(object sender, insertNewDeviceCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class insertNewDeviceCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6146,11 +6709,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void validateUserCompletedEventHandler(object sender, validateUserCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class validateUserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6172,11 +6735,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void sessionUserCompletedEventHandler(object sender, sessionUserCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class sessionUserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6198,11 +6761,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getStartMarkerPositionCompletedEventHandler(object sender, getStartMarkerPositionCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getStartMarkerPositionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6224,11 +6787,53 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
+    public delegate void sendAttendanceMailCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// CodeRemarks
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
+    public delegate void specLogCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// CodeRemarks
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
+    public delegate void IsAuthCompletedEventHandler(object sender, IsAuthCompletedEventArgs e);
+    
+    /// CodeRemarks
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class IsAuthCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal IsAuthCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// CodeRemarks
+        public bool IsAuthResult {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+        
+        /// CodeRemarks
+        public bool IsAuthResultSpecified {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[1]));
+            }
+        }
+    }
+    
+    /// CodeRemarks
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getEventDateNameIdCompletedEventHandler(object sender, getEventDateNameIdCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getEventDateNameIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6250,11 +6855,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void groupResultsMongoCompletedEventHandler(object sender, groupResultsMongoCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class groupResultsMongoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6276,11 +6881,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getPerformanceFordateCompletedEventHandler(object sender, getPerformanceFordateCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getPerformanceFordateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6302,11 +6907,15 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
+    public delegate void sendNotificationExceedingCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// CodeRemarks
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getMyTrailForEventMongoCompletedEventHandler(object sender, getMyTrailForEventMongoCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getMyTrailForEventMongoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6328,11 +6937,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getAthDataByDeviceIdCompletedEventHandler(object sender, getAthDataByDeviceIdCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getAthDataByDeviceIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6354,11 +6963,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getUserCalendarCompletedEventHandler(object sender, getUserCalendarCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getUserCalendarCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6380,11 +6989,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void updateUserDataJsonCompletedEventHandler(object sender, updateUserDataJsonCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class updateUserDataJsonCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6406,11 +7015,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getUserCalendarFutureCompletedEventHandler(object sender, getUserCalendarFutureCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getUserCalendarFutureCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6432,11 +7041,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getUserCalendarPastCompletedEventHandler(object sender, getUserCalendarPastCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getUserCalendarPastCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6458,11 +7067,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void setCommentsCompletedEventHandler(object sender, setCommentsCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class setCommentsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6484,11 +7093,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void setCommentsCoachCompletedEventHandler(object sender, setCommentsCoachCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class setCommentsCoachCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6510,11 +7119,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getUsrObjectCompletedEventHandler(object sender, getUsrObjectCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getUsrObjectCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6536,11 +7145,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getUserPmcCompletedEventHandler(object sender, getUserPmcCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getUserPmcCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6562,11 +7171,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getGaugesForMonthCompletedEventHandler(object sender, getGaugesForMonthCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getGaugesForMonthCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6588,11 +7197,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void insertCompUserKeyCompletedEventHandler(object sender, insertCompUserKeyCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class insertCompUserKeyCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6614,11 +7223,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void syncSuuntoCompletedEventHandler(object sender, syncSuuntoCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class syncSuuntoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6648,11 +7257,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getPrcticeListCompletedEventHandler(object sender, getPrcticeListCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getPrcticeListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6674,11 +7283,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getUserCalendarTodayCompletedEventHandler(object sender, getUserCalendarTodayCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getUserCalendarTodayCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6700,11 +7309,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void updateSubGroupNameCompletedEventHandler(object sender, updateSubGroupNameCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class updateSubGroupNameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6726,11 +7335,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getUsrLoginDataCompletedEventHandler(object sender, getUsrLoginDataCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getUsrLoginDataCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6752,11 +7361,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void resetCalendarEventCompletedEventHandler(object sender, resetCalendarEventCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class resetCalendarEventCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6786,11 +7395,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getEventGraphCompletedEventHandler(object sender, getEventGraphCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getEventGraphCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6812,11 +7421,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getNearestEventMakersCompletedEventHandler(object sender, getNearestEventMakersCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getNearestEventMakersCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6838,11 +7447,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void athDataCompletedEventHandler(object sender, athDataCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class athDataCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6864,11 +7473,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void removeMultiFromGroupCompletedEventHandler(object sender, removeMultiFromGroupCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class removeMultiFromGroupCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6898,11 +7507,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getCommentsCompletedEventHandler(object sender, getCommentsCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getCommentsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6924,11 +7533,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void fieldAthletsAndEvenetsCompletedEventHandler(object sender, fieldAthletsAndEvenetsCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class fieldAthletsAndEvenetsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6950,11 +7559,37 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
+    public delegate void fieldAthletsAndEvenetsMobCompletedEventHandler(object sender, fieldAthletsAndEvenetsMobCompletedEventArgs e);
+    
+    /// CodeRemarks
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class fieldAthletsAndEvenetsMobCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal fieldAthletsAndEvenetsMobCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// CodeRemarks
+        public object Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object)(this.results[0]));
+            }
+        }
+    }
+    
+    /// CodeRemarks
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void updateMomgoGroupsCompletedEventHandler(object sender, updateMomgoGroupsCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class updateMomgoGroupsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -6976,11 +7611,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void removeAthFromGroupCompletedEventHandler(object sender, removeAthFromGroupCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class removeAthFromGroupCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -7010,11 +7645,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void removeFromGroupCompletedEventHandler(object sender, removeFromGroupCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class removeFromGroupCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -7036,11 +7671,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getIyemsForGroupCompletedEventHandler(object sender, getIyemsForGroupCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getIyemsForGroupCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -7062,11 +7697,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void replaceUtilCompletedEventHandler(object sender, replaceUtilCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class replaceUtilCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -7088,11 +7723,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getPmcCompletedEventHandler(object sender, getPmcCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getPmcCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -7114,11 +7749,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getAllathForGroupCompletedEventHandler(object sender, getAllathForGroupCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getAllathForGroupCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -7140,11 +7775,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getBestResultsCompletedEventHandler(object sender, getBestResultsCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getBestResultsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -7166,11 +7801,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getNearestEventCompletedEventHandler(object sender, getNearestEventCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getNearestEventCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -7192,11 +7827,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getBestResultsForAthCompletedEventHandler(object sender, getBestResultsForAthCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getBestResultsForAthCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -7218,11 +7853,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void updateMeberNotesCompletedEventHandler(object sender, updateMeberNotesCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class updateMeberNotesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -7244,11 +7879,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getNotesMobCompletedEventHandler(object sender, getNotesMobCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getNotesMobCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -7270,11 +7905,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getEventInfoCompletedEventHandler(object sender, getEventInfoCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getEventInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -7296,11 +7931,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void addSyncCompletedEventHandler(object sender, addSyncCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class addSyncCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -7322,11 +7957,11 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void validatSyncCompletedEventHandler(object sender, validatSyncCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class validatSyncCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -7348,11 +7983,37 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
+    public delegate void sismaCompletedEventHandler(object sender, sismaCompletedEventArgs e);
+    
+    /// CodeRemarks
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class sismaCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal sismaCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// CodeRemarks
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// CodeRemarks
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void getUsrGroupCompletedEventHandler(object sender, getUsrGroupCompletedEventArgs e);
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getUsrGroupCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -7374,6 +8035,6 @@ namespace goheja.trackSvc {
     }
     
     /// CodeRemarks
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "4.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void updateAthPersonalDataCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
 }

@@ -1,4 +1,5 @@
 ﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Xamarin.Build.Download.0.4.4\build\Xamarin.Build.Download.props" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.4\build\Xamarin.Build.Download.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -63,9 +64,6 @@
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="Mono.Data.Sqlite" />
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation">
       <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
@@ -78,38 +76,89 @@
     <Reference Include="GalaSoft.MvvmLight.Platform">
       <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\monoandroid1\GalaSoft.MvvmLight.Platform.dll</HintPath>
     </Reference>
-    <Reference Include="FluentValidation">
-      <HintPath>..\packages\FluentValidation.6.2.1.0\lib\portable-net45+wp80+win8+wpa81\FluentValidation.dll</HintPath>
-    </Reference>
     <Reference Include="AutoFitTextView">
       <HintPath>..\packages\AutoFitTextView.0.2.1.0\lib\MonoAndroid403\AutoFitTextView.dll</HintPath>
     </Reference>
+    <Reference Include="Xamarin.RangeSlider.Common">
+      <HintPath>..\packages\Xamarin.RangeSlider.0.6.14\lib\MonoAndroid10\Xamarin.RangeSlider.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.RangeSlider.Droid">
+      <HintPath>..\packages\Xamarin.RangeSlider.0.6.14\lib\MonoAndroid10\Xamarin.RangeSlider.Droid.dll</HintPath>
+    </Reference>
     <Reference Include="Xamarin.GooglePlayServices.Basement">
-      <HintPath>..\packages\Xamarin.GooglePlayServices.Basement.29.0.0.2\lib\MonoAndroid41\Xamarin.GooglePlayServices.Basement.dll</HintPath>
+      <HintPath>..\packages\Xamarin.GooglePlayServices.Basement.42.1001.0\lib\MonoAndroid70\Xamarin.GooglePlayServices.Basement.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Tasks">
+      <HintPath>..\packages\Xamarin.GooglePlayServices.Tasks.42.1001.0\lib\MonoAndroid70\Xamarin.GooglePlayServices.Tasks.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.GooglePlayServices.Base">
-      <HintPath>..\packages\Xamarin.GooglePlayServices.Base.29.0.0.2\lib\MonoAndroid41\Xamarin.GooglePlayServices.Base.dll</HintPath>
+      <HintPath>..\packages\Xamarin.GooglePlayServices.Base.42.1001.0\lib\MonoAndroid70\Xamarin.GooglePlayServices.Base.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.GooglePlayServices.Maps">
-      <HintPath>..\packages\Xamarin.GooglePlayServices.Maps.29.0.0.2\lib\MonoAndroid41\Xamarin.GooglePlayServices.Maps.dll</HintPath>
+      <HintPath>..\packages\Xamarin.GooglePlayServices.Maps.42.1001.0\lib\MonoAndroid70\Xamarin.GooglePlayServices.Maps.dll</HintPath>
+    </Reference>
+    <Reference Include="Square.Picasso">
+      <HintPath>..\packages\Square.Picasso.2.5.2.1\lib\MonoAndroid\Square.Picasso.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Square.OkIO">
+      <HintPath>..\packages\Square.OkIO.1.11.0\lib\MonoAndroid\Square.OkIO.dll</HintPath>
+    </Reference>
+    <Reference Include="Square.OkHttp">
+      <HintPath>..\packages\Square.OkHttp.2.7.5.0\lib\MonoAndroid\Square.OkHttp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="FluentValidation">
+      <HintPath>..\packages\FluentValidation.6.4.1\lib\portable-net45+wp80+win8+wpa81\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Annotations">
+      <HintPath>..\packages\Xamarin.Android.Support.Annotations.25.3.1\lib\MonoAndroid70\Xamarin.Android.Support.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Compat">
+      <HintPath>..\packages\Xamarin.Android.Support.Compat.25.3.1\lib\MonoAndroid70\Xamarin.Android.Support.Compat.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Core.UI">
+      <HintPath>..\packages\Xamarin.Android.Support.Core.UI.25.3.1\lib\MonoAndroid70\Xamarin.Android.Support.Core.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Core.Utils">
+      <HintPath>..\packages\Xamarin.Android.Support.Core.Utils.25.3.1\lib\MonoAndroid70\Xamarin.Android.Support.Core.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Media.Compat">
+      <HintPath>..\packages\Xamarin.Android.Support.Media.Compat.25.3.1\lib\MonoAndroid70\Xamarin.Android.Support.Media.Compat.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Fragment">
+      <HintPath>..\packages\Xamarin.Android.Support.Fragment.25.3.1\lib\MonoAndroid70\Xamarin.Android.Support.Fragment.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Android.Support.v4">
-      <HintPath>..\packages\Xamarin.Android.Support.v4.23.3.0\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Android.Support.v4.25.3.1\lib\MonoAndroid70\Xamarin.Android.Support.v4.dll</HintPath>
     </Reference>
     <Reference Include="Xuni.Android.Core">
-      <HintPath>..\packages\Xuni.Android.Core.2.3.20163.160\lib\MonoAndroid10\Xuni.Android.Core.dll</HintPath>
+      <HintPath>..\packages\Xuni.Android.Core.2.3.20171.185\lib\MonoAndroid10\Xuni.Android.Core.dll</HintPath>
     </Reference>
     <Reference Include="Xuni.Android.Calendar">
-      <HintPath>..\packages\Xuni.Android.Calendar.2.3.20163.160\lib\MonoAndroid10\Xuni.Android.Calendar.dll</HintPath>
+      <HintPath>..\packages\Xuni.Android.Calendar.2.3.20171.185\lib\MonoAndroid10\Xuni.Android.Calendar.dll</HintPath>
     </Reference>
     <Reference Include="Xuni.Android.ChartCore">
-      <HintPath>..\packages\Xuni.Android.ChartCore.2.3.20163.160\lib\MonoAndroid10\Xuni.Android.ChartCore.dll</HintPath>
+      <HintPath>..\packages\Xuni.Android.ChartCore.2.3.20171.185\lib\MonoAndroid10\Xuni.Android.ChartCore.dll</HintPath>
     </Reference>
     <Reference Include="Xuni.Android.FlexChart">
-      <HintPath>..\packages\Xuni.Android.FlexChart.2.3.20163.160\lib\MonoAndroid10\Xuni.Android.FlexChart.dll</HintPath>
+      <HintPath>..\packages\Xuni.Android.FlexChart.2.3.20171.185\lib\MonoAndroid10\Xuni.Android.FlexChart.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Controls.RangeSlider.Android">
+      <HintPath>..\..\7_Altermans\Components\rangeslider-1.1.0.3\lib\android\Xamarin.Controls.RangeSlider.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="RoundedImageView">
+      <HintPath>..\..\7_Altermans\Components\RoundedImageView-2.2.1\lib\android\RoundedImageView.dll</HintPath>
     </Reference>
     <Reference Include="AndHUD">
       <HintPath>..\Components\AndHUD-1.3.1\lib\android\AndHUD.dll</HintPath>
+    </Reference>
+    <Reference Include="UniversalImageLoader">
+      <HintPath>..\Components\UniversalImageLoader-1.9.4.1\lib\android\UniversalImageLoader.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -138,7 +187,6 @@
     <Compile Include="Activities\InitActivity.cs" />
     <Compile Include="Activities\LoginActivity.cs" />
     <Compile Include="Activities\EventCalendarActivity.cs" />
-    <Compile Include="Adapter\GoHejaEventAdapter.cs" />
     <Compile Include="Activities\EventInstructionActivity.cs" />
     <Compile Include="Activities\AddCommentActivity.cs" />
     <Compile Include="Activities\AdjustTrainningActivity.cs" />
@@ -149,6 +197,12 @@
     <Compile Include="ViewModel\PointInfoDialog.cs" />
     <Compile Include="Activities\AnalyticsActivity.cs" />
     <Compile Include="Activities\SelectPTypeActivity.cs" />
+    <Compile Include="Adapter\GoHejaEventAdapter.cs" />
+    <Compile Include="Activities\CoachHomeActivity.cs" />
+    <Compile Include="Adapter\UsersAdapter.cs" />
+    <Compile Include="Activities\CoachGroupsActivity.cs" />
+    <Compile Include="Activities\CoachSubGroupsActivity.cs" />
+    <Compile Include="Activities\CoachAthletesBySubGroupActivity.cs" />
     <Compile Include="Web References\trackSvc\Reference.cs">
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
@@ -194,6 +248,7 @@
     <AndroidResource Include="Resources\drawable\splash.png" />
     <AndroidResource Include="Resources\drawable\stop_active.png" />
     <AndroidResource Include="Resources\drawable\switch_off.png" />
+    <AndroidResource Include="Resources\drawable\timer_new.png" />
     <AndroidResource Include="Resources\drawable\watt_new.png" />
     <AndroidResource Include="Resources\layout\RegisterActivity.axml">
       <SubType>AndroidResource</SubType>
@@ -290,17 +345,32 @@
     <AndroidResource Include="Resources\drawable\bg_performance.png" />
     <AndroidResource Include="Resources\values\attr.xml" />
     <AndroidResource Include="Resources\drawable\icon_home.png" />
+    <AndroidResource Include="Resources\layout\CoachHomeActivity.axml" />
+    <AndroidResource Include="Resources\drawable\icon_search.png" />
+    <AndroidResource Include="Resources\layout\item_User.axml" />
+    <AndroidResource Include="Resources\layout\CoachGroupsActivity.axml" />
+    <AndroidResource Include="Resources\drawable\icon_athlete.png" />
+    <AndroidResource Include="Resources\drawable\icon_circle_blue.png" />
+    <AndroidResource Include="Resources\drawable\icon_circle_green.png" />
+    <AndroidResource Include="Resources\drawable\icon_circle_red.png" />
+    <AndroidResource Include="Resources\drawable\icon_no_avatar.png" />
+    <AndroidResource Include="Resources\layout\CoachSubGroupsActivity.axml" />
+    <AndroidResource Include="Resources\layout\CoachAthletesBySubGroupActivity.axml" />
+    <AndroidResource Include="Resources\drawable\icon_circle_empty.png" />
     <None Include="Web References\trackSvc\Service1.xsd" />
     <None Include="Web References\trackSvc\Service10.xsd" />
     <None Include="Web References\trackSvc\Service11.xsd" />
     <None Include="Web References\trackSvc\Service12.xsd" />
     <None Include="Web References\trackSvc\Service13.xsd" />
+    <None Include="Web References\trackSvc\Service1.disco" />
     <None Include="Web References\trackSvc\Service1.wsdl" />
     <None Include="Web References\trackSvc\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <AndroidResource Include="Resources\drawable\timer_new.png" />
+    <AndroidResource Include="Resources\layout\SplashActivity.axml" />
+    <AndroidResource Include="Resources\Raw\splash.mp4" />
+    <AndroidResource Include="Resources\Raw\splash_long.mp4" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />
@@ -328,14 +398,19 @@
     <Folder Include="Utility\" />
     <Folder Include="Adapter\" />
     <Folder Include="Resources\Anim\" />
+    <Folder Include="Resources\Raw\" />
   </ItemGroup>
   <ItemGroup>
-    <XamarinComponentReference Include="googleplayservices-maps">
-      <Version>29.0.0.2</Version>
-      <Visible>False</Visible>
-    </XamarinComponentReference>
     <XamarinComponentReference Include="AndHUD">
       <Version>1.3.1</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="googleplayservices-maps">
+      <Version>42.1001.0.0</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="UniversalImageLoader">
+      <Version>1.9.4.1</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
   </ItemGroup>
@@ -349,11 +424,22 @@
     <WebReferences Include="Web References" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://go-heja.com/Service1.svc?wsdl">
+    <WebReferenceUrl Include="http://go-heja.com/Service1.svc">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\trackSvc</RelPath>
-      <UpdateFromURL>http://go-heja.com/Service1.svc?wsdl</UpdateFromURL>
+      <UpdateFromURL>http://go-heja.com/Service1.svc</UpdateFromURL>
     </WebReferenceUrl>
   </ItemGroup>
-  <Import Project="..\packages\Xamarin.GooglePlayServices.Basement.29.0.0.2\build\Xamarin.GooglePlayServices.Basement.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Basement.29.0.0.2\build\Xamarin.GooglePlayServices.Basement.targets')" />
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Basement.42.1001.0\build\MonoAndroid70\Xamarin.GooglePlayServices.Basement.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Basement.42.1001.0\build\MonoAndroid70\Xamarin.GooglePlayServices.Basement.targets')" />
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Tasks.42.1001.0\build\MonoAndroid70\Xamarin.GooglePlayServices.Tasks.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Tasks.42.1001.0\build\MonoAndroid70\Xamarin.GooglePlayServices.Tasks.targets')" />
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Base.42.1001.0\build\MonoAndroid70\Xamarin.GooglePlayServices.Base.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Base.42.1001.0\build\MonoAndroid70\Xamarin.GooglePlayServices.Base.targets')" />
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Maps.42.1001.0\build\MonoAndroid70\Xamarin.GooglePlayServices.Maps.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Maps.42.1001.0\build\MonoAndroid70\Xamarin.GooglePlayServices.Maps.targets')" />
+  <Import Project="..\packages\Xamarin.Build.Download.0.4.4\build\Xamarin.Build.Download.targets" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.4\build\Xamarin.Build.Download.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Annotations.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Annotations.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Annotations.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Annotations.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Compat.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Compat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Compat.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Compat.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Core.UI.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Core.UI.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Core.UI.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Core.UI.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Core.Utils.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Core.Utils.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Core.Utils.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Core.Utils.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Media.Compat.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Media.Compat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Media.Compat.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Media.Compat.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Fragment.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Fragment.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Fragment.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Fragment.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.v4.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.v4.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v4.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.v4.targets')" />
 </Project>
