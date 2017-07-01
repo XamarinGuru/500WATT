@@ -405,7 +405,6 @@
     <BundleResource Include="Resources\icon_changepw.png" />
     <BundleResource Include="Resources\icon_logo_new.png" />
     <BundleResource Include="Resources\no-photo-round.png" />
-    <BundleResource Include="Resources\splash_new.png" />
     <BundleResource Include="Resources\icon_map_pin.png" />
     <BundleResource Include="Resources\pin_camera.png" />
     <BundleResource Include="Resources\pin_check_mark.png" />
