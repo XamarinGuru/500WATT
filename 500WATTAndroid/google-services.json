@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "142408637243",
+    "firebase_url": "https://watt-b9809.firebaseio.com",
+    "project_id": "watt-b9809",
+    "storage_bucket": "watt-b9809.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:142408637243:android:0a81a1c44219f804",
+        "android_client_info": {
+          "package_name": "goheja.fivewa.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "142408637243-06be46t6tu8ighsu95d1nvc3ig7o3caq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLqIxB5GjBDbb9wsp9umMVIqui7GeeOyY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

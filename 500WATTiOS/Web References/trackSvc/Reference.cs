@@ -74,6 +74,8 @@ namespace location2.trackSvc {
         
         private System.Threading.SendOrPostCallback athGeneralListMobOperationCompleted;
         
+        private System.Threading.SendOrPostCallback athGeneralListMobWithTypeAndIdOperationCompleted;
+        
         private System.Threading.SendOrPostCallback insertMultiToGroupOperationCompleted;
         
         private System.Threading.SendOrPostCallback getEventReportOperationCompleted;
@@ -188,11 +190,21 @@ namespace location2.trackSvc {
         
         private System.Threading.SendOrPostCallback setCommentsOperationCompleted;
         
+        private System.Threading.SendOrPostCallback setCommentsMobOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getCoachesOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getCoachesMobOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getCoachesMobWithUserIdOperationCompleted;
+        
         private System.Threading.SendOrPostCallback setCommentsCoachOperationCompleted;
         
         private System.Threading.SendOrPostCallback getUsrObjectOperationCompleted;
         
         private System.Threading.SendOrPostCallback getUserPmcOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getUserPmcDeskOperationCompleted;
         
         private System.Threading.SendOrPostCallback getGaugesForMonthOperationCompleted;
         
@@ -223,6 +235,8 @@ namespace location2.trackSvc {
         private System.Threading.SendOrPostCallback fieldAthletsAndEvenetsOperationCompleted;
         
         private System.Threading.SendOrPostCallback fieldAthletsAndEvenetsMobOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback fieldAthletsAndEvenetsMobWithIdAndTypeOperationCompleted;
         
         private System.Threading.SendOrPostCallback updateMomgoGroupsOperationCompleted;
         
@@ -259,6 +273,8 @@ namespace location2.trackSvc {
         private System.Threading.SendOrPostCallback getUsrGroupOperationCompleted;
         
         private System.Threading.SendOrPostCallback updateAthPersonalDataOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback pasteEventOperationCompleted;
         
         /// CodeRemarks
         public Service1() {
@@ -343,6 +359,9 @@ namespace location2.trackSvc {
         
         /// CodeRemarks
         public event athGeneralListMobCompletedEventHandler athGeneralListMobCompleted;
+        
+        /// CodeRemarks
+        public event athGeneralListMobWithTypeAndIdCompletedEventHandler athGeneralListMobWithTypeAndIdCompleted;
         
         /// CodeRemarks
         public event insertMultiToGroupCompletedEventHandler insertMultiToGroupCompleted;
@@ -516,6 +535,18 @@ namespace location2.trackSvc {
         public event setCommentsCompletedEventHandler setCommentsCompleted;
         
         /// CodeRemarks
+        public event setCommentsMobCompletedEventHandler setCommentsMobCompleted;
+        
+        /// CodeRemarks
+        public event getCoachesCompletedEventHandler getCoachesCompleted;
+        
+        /// CodeRemarks
+        public event getCoachesMobCompletedEventHandler getCoachesMobCompleted;
+        
+        /// CodeRemarks
+        public event getCoachesMobWithUserIdCompletedEventHandler getCoachesMobWithUserIdCompleted;
+        
+        /// CodeRemarks
         public event setCommentsCoachCompletedEventHandler setCommentsCoachCompleted;
         
         /// CodeRemarks
@@ -523,6 +554,9 @@ namespace location2.trackSvc {
         
         /// CodeRemarks
         public event getUserPmcCompletedEventHandler getUserPmcCompleted;
+        
+        /// CodeRemarks
+        public event getUserPmcDeskCompletedEventHandler getUserPmcDeskCompleted;
         
         /// CodeRemarks
         public event getGaugesForMonthCompletedEventHandler getGaugesForMonthCompleted;
@@ -568,6 +602,9 @@ namespace location2.trackSvc {
         
         /// CodeRemarks
         public event fieldAthletsAndEvenetsMobCompletedEventHandler fieldAthletsAndEvenetsMobCompleted;
+        
+        /// CodeRemarks
+        public event fieldAthletsAndEvenetsMobWithIdAndTypeCompletedEventHandler fieldAthletsAndEvenetsMobWithIdAndTypeCompleted;
         
         /// CodeRemarks
         public event updateMomgoGroupsCompletedEventHandler updateMomgoGroupsCompleted;
@@ -622,6 +659,9 @@ namespace location2.trackSvc {
         
         /// CodeRemarks
         public event updateAthPersonalDataCompletedEventHandler updateAthPersonalDataCompleted;
+        
+        /// CodeRemarks
+        public event pasteEventCompletedEventHandler pasteEventCompleted;
         
         /// CodeRemarks
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/decodeFitFile", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -1590,6 +1630,38 @@ namespace location2.trackSvc {
             if ((this.athGeneralListMobCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.athGeneralListMobCompleted(this, new athGeneralListMobCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// CodeRemarks
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/athGeneralListMobWithTypeAndId", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public object athGeneralListMobWithTypeAndId([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string token, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string specGroup) {
+            object[] results = this.Invoke("athGeneralListMobWithTypeAndId", new object[] {
+                        token,
+                        specGroup});
+            return ((object)(results[0]));
+        }
+        
+        /// CodeRemarks
+        public void athGeneralListMobWithTypeAndIdAsync(string token, string specGroup) {
+            this.athGeneralListMobWithTypeAndIdAsync(token, specGroup, null);
+        }
+        
+        /// CodeRemarks
+        public void athGeneralListMobWithTypeAndIdAsync(string token, string specGroup, object userState) {
+            if ((this.athGeneralListMobWithTypeAndIdOperationCompleted == null)) {
+                this.athGeneralListMobWithTypeAndIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OnathGeneralListMobWithTypeAndIdOperationCompleted);
+            }
+            this.InvokeAsync("athGeneralListMobWithTypeAndId", new object[] {
+                        token,
+                        specGroup}, this.athGeneralListMobWithTypeAndIdOperationCompleted, userState);
+        }
+        
+        private void OnathGeneralListMobWithTypeAndIdOperationCompleted(object arg) {
+            if ((this.athGeneralListMobWithTypeAndIdCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.athGeneralListMobWithTypeAndIdCompleted(this, new athGeneralListMobWithTypeAndIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -3648,6 +3720,138 @@ namespace location2.trackSvc {
         }
         
         /// CodeRemarks
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/setCommentsMob", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public object setCommentsMob([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string athour, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string authorId, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string commentText, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string eventId, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string specGroup) {
+            object[] results = this.Invoke("setCommentsMob", new object[] {
+                        athour,
+                        authorId,
+                        commentText,
+                        eventId,
+                        specGroup});
+            return ((object)(results[0]));
+        }
+        
+        /// CodeRemarks
+        public void setCommentsMobAsync(string athour, string authorId, string commentText, string eventId, string specGroup) {
+            this.setCommentsMobAsync(athour, authorId, commentText, eventId, specGroup, null);
+        }
+        
+        /// CodeRemarks
+        public void setCommentsMobAsync(string athour, string authorId, string commentText, string eventId, string specGroup, object userState) {
+            if ((this.setCommentsMobOperationCompleted == null)) {
+                this.setCommentsMobOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsetCommentsMobOperationCompleted);
+            }
+            this.InvokeAsync("setCommentsMob", new object[] {
+                        athour,
+                        authorId,
+                        commentText,
+                        eventId,
+                        specGroup}, this.setCommentsMobOperationCompleted, userState);
+        }
+        
+        private void OnsetCommentsMobOperationCompleted(object arg) {
+            if ((this.setCommentsMobCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.setCommentsMobCompleted(this, new setCommentsMobCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// CodeRemarks
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/getCoaches", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute("ArrayOfBsonElement", Namespace="http://schemas.datacontract.org/2004/07/MongoDB.Bson")]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/MongoDB.Bson", IsNullable=false, NestingLevel=1)]
+        public BsonElement[][] getCoaches([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string specGroup) {
+            object[] results = this.Invoke("getCoaches", new object[] {
+                        specGroup});
+            return ((BsonElement[][])(results[0]));
+        }
+        
+        /// CodeRemarks
+        public void getCoachesAsync(string specGroup) {
+            this.getCoachesAsync(specGroup, null);
+        }
+        
+        /// CodeRemarks
+        public void getCoachesAsync(string specGroup, object userState) {
+            if ((this.getCoachesOperationCompleted == null)) {
+                this.getCoachesOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetCoachesOperationCompleted);
+            }
+            this.InvokeAsync("getCoaches", new object[] {
+                        specGroup}, this.getCoachesOperationCompleted, userState);
+        }
+        
+        private void OngetCoachesOperationCompleted(object arg) {
+            if ((this.getCoachesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getCoachesCompleted(this, new getCoachesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// CodeRemarks
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/getCoachesMob", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string getCoachesMob([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string specGroup) {
+            object[] results = this.Invoke("getCoachesMob", new object[] {
+                        specGroup});
+            return ((string)(results[0]));
+        }
+        
+        /// CodeRemarks
+        public void getCoachesMobAsync(string specGroup) {
+            this.getCoachesMobAsync(specGroup, null);
+        }
+        
+        /// CodeRemarks
+        public void getCoachesMobAsync(string specGroup, object userState) {
+            if ((this.getCoachesMobOperationCompleted == null)) {
+                this.getCoachesMobOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetCoachesMobOperationCompleted);
+            }
+            this.InvokeAsync("getCoachesMob", new object[] {
+                        specGroup}, this.getCoachesMobOperationCompleted, userState);
+        }
+        
+        private void OngetCoachesMobOperationCompleted(object arg) {
+            if ((this.getCoachesMobCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getCoachesMobCompleted(this, new getCoachesMobCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// CodeRemarks
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/getCoachesMobWithUserId", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string getCoachesMobWithUserId([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string specGroup, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string userId) {
+            object[] results = this.Invoke("getCoachesMobWithUserId", new object[] {
+                        specGroup,
+                        userId});
+            return ((string)(results[0]));
+        }
+        
+        /// CodeRemarks
+        public void getCoachesMobWithUserIdAsync(string specGroup, string userId) {
+            this.getCoachesMobWithUserIdAsync(specGroup, userId, null);
+        }
+        
+        /// CodeRemarks
+        public void getCoachesMobWithUserIdAsync(string specGroup, string userId, object userState) {
+            if ((this.getCoachesMobWithUserIdOperationCompleted == null)) {
+                this.getCoachesMobWithUserIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetCoachesMobWithUserIdOperationCompleted);
+            }
+            this.InvokeAsync("getCoachesMobWithUserId", new object[] {
+                        specGroup,
+                        userId}, this.getCoachesMobWithUserIdOperationCompleted, userState);
+        }
+        
+        private void OngetCoachesMobWithUserIdOperationCompleted(object arg) {
+            if ((this.getCoachesMobWithUserIdCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getCoachesMobWithUserIdCompleted(this, new getCoachesMobWithUserIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// CodeRemarks
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/setCommentsCoach", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         public object setCommentsCoach([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string athour, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string authorId, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string subGroupId, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string isGroup, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string commentText, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string eventId, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string specGroup) {
@@ -3750,6 +3954,38 @@ namespace location2.trackSvc {
             if ((this.getUserPmcCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.getUserPmcCompleted(this, new getUserPmcCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// CodeRemarks
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/getUserPmcDesk", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public object getUserPmcDesk([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string userId, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string specGroup) {
+            object[] results = this.Invoke("getUserPmcDesk", new object[] {
+                        userId,
+                        specGroup});
+            return ((object)(results[0]));
+        }
+        
+        /// CodeRemarks
+        public void getUserPmcDeskAsync(string userId, string specGroup) {
+            this.getUserPmcDeskAsync(userId, specGroup, null);
+        }
+        
+        /// CodeRemarks
+        public void getUserPmcDeskAsync(string userId, string specGroup, object userState) {
+            if ((this.getUserPmcDeskOperationCompleted == null)) {
+                this.getUserPmcDeskOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetUserPmcDeskOperationCompleted);
+            }
+            this.InvokeAsync("getUserPmcDesk", new object[] {
+                        userId,
+                        specGroup}, this.getUserPmcDeskOperationCompleted, userState);
+        }
+        
+        private void OngetUserPmcDeskOperationCompleted(object arg) {
+            if ((this.getUserPmcDeskCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getUserPmcDeskCompleted(this, new getUserPmcDeskCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -4280,6 +4516,40 @@ namespace location2.trackSvc {
             if ((this.fieldAthletsAndEvenetsMobCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.fieldAthletsAndEvenetsMobCompleted(this, new fieldAthletsAndEvenetsMobCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// CodeRemarks
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/fieldAthletsAndEvenetsMobWithIdAndType", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public object fieldAthletsAndEvenetsMobWithIdAndType([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string token, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string fieldId, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string specGroup) {
+            object[] results = this.Invoke("fieldAthletsAndEvenetsMobWithIdAndType", new object[] {
+                        token,
+                        fieldId,
+                        specGroup});
+            return ((object)(results[0]));
+        }
+        
+        /// CodeRemarks
+        public void fieldAthletsAndEvenetsMobWithIdAndTypeAsync(string token, string fieldId, string specGroup) {
+            this.fieldAthletsAndEvenetsMobWithIdAndTypeAsync(token, fieldId, specGroup, null);
+        }
+        
+        /// CodeRemarks
+        public void fieldAthletsAndEvenetsMobWithIdAndTypeAsync(string token, string fieldId, string specGroup, object userState) {
+            if ((this.fieldAthletsAndEvenetsMobWithIdAndTypeOperationCompleted == null)) {
+                this.fieldAthletsAndEvenetsMobWithIdAndTypeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnfieldAthletsAndEvenetsMobWithIdAndTypeOperationCompleted);
+            }
+            this.InvokeAsync("fieldAthletsAndEvenetsMobWithIdAndType", new object[] {
+                        token,
+                        fieldId,
+                        specGroup}, this.fieldAthletsAndEvenetsMobWithIdAndTypeOperationCompleted, userState);
+        }
+        
+        private void OnfieldAthletsAndEvenetsMobWithIdAndTypeOperationCompleted(object arg) {
+            if ((this.fieldAthletsAndEvenetsMobWithIdAndTypeCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.fieldAthletsAndEvenetsMobWithIdAndTypeCompleted(this, new fieldAthletsAndEvenetsMobWithIdAndTypeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -4919,6 +5189,52 @@ namespace location2.trackSvc {
             if ((this.updateAthPersonalDataCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.updateAthPersonalDataCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// CodeRemarks
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/pasteEvent", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public object pasteEvent([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string eventId, System.DateTime startDate, [System.Xml.Serialization.XmlIgnoreAttribute()] bool startDateSpecified, bool isSubGroup, [System.Xml.Serialization.XmlIgnoreAttribute()] bool isSubGroupSpecified, [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)] [System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays")] string[] ids, bool isSingle, [System.Xml.Serialization.XmlIgnoreAttribute()] bool isSingleSpecified, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string specGroup) {
+            object[] results = this.Invoke("pasteEvent", new object[] {
+                        eventId,
+                        startDate,
+                        startDateSpecified,
+                        isSubGroup,
+                        isSubGroupSpecified,
+                        ids,
+                        isSingle,
+                        isSingleSpecified,
+                        specGroup});
+            return ((object)(results[0]));
+        }
+        
+        /// CodeRemarks
+        public void pasteEventAsync(string eventId, System.DateTime startDate, bool startDateSpecified, bool isSubGroup, bool isSubGroupSpecified, string[] ids, bool isSingle, bool isSingleSpecified, string specGroup) {
+            this.pasteEventAsync(eventId, startDate, startDateSpecified, isSubGroup, isSubGroupSpecified, ids, isSingle, isSingleSpecified, specGroup, null);
+        }
+        
+        /// CodeRemarks
+        public void pasteEventAsync(string eventId, System.DateTime startDate, bool startDateSpecified, bool isSubGroup, bool isSubGroupSpecified, string[] ids, bool isSingle, bool isSingleSpecified, string specGroup, object userState) {
+            if ((this.pasteEventOperationCompleted == null)) {
+                this.pasteEventOperationCompleted = new System.Threading.SendOrPostCallback(this.OnpasteEventOperationCompleted);
+            }
+            this.InvokeAsync("pasteEvent", new object[] {
+                        eventId,
+                        startDate,
+                        startDateSpecified,
+                        isSubGroup,
+                        isSubGroupSpecified,
+                        ids,
+                        isSingle,
+                        isSingleSpecified,
+                        specGroup}, this.pasteEventOperationCompleted, userState);
+        }
+        
+        private void OnpasteEventOperationCompleted(object arg) {
+            if ((this.pasteEventCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.pasteEventCompleted(this, new pasteEventCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -5637,6 +5953,32 @@ namespace location2.trackSvc {
         private object[] results;
         
         internal athGeneralListMobCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// CodeRemarks
+        public object Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object)(this.results[0]));
+            }
+        }
+    }
+    
+    /// CodeRemarks
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
+    public delegate void athGeneralListMobWithTypeAndIdCompletedEventHandler(object sender, athGeneralListMobWithTypeAndIdCompletedEventArgs e);
+    
+    /// CodeRemarks
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class athGeneralListMobWithTypeAndIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal athGeneralListMobWithTypeAndIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -7094,6 +7436,110 @@ namespace location2.trackSvc {
     
     /// CodeRemarks
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
+    public delegate void setCommentsMobCompletedEventHandler(object sender, setCommentsMobCompletedEventArgs e);
+    
+    /// CodeRemarks
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class setCommentsMobCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal setCommentsMobCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// CodeRemarks
+        public object Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object)(this.results[0]));
+            }
+        }
+    }
+    
+    /// CodeRemarks
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
+    public delegate void getCoachesCompletedEventHandler(object sender, getCoachesCompletedEventArgs e);
+    
+    /// CodeRemarks
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getCoachesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getCoachesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// CodeRemarks
+        public BsonElement[][] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((BsonElement[][])(this.results[0]));
+            }
+        }
+    }
+    
+    /// CodeRemarks
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
+    public delegate void getCoachesMobCompletedEventHandler(object sender, getCoachesMobCompletedEventArgs e);
+    
+    /// CodeRemarks
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getCoachesMobCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getCoachesMobCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// CodeRemarks
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// CodeRemarks
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
+    public delegate void getCoachesMobWithUserIdCompletedEventHandler(object sender, getCoachesMobWithUserIdCompletedEventArgs e);
+    
+    /// CodeRemarks
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getCoachesMobWithUserIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getCoachesMobWithUserIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// CodeRemarks
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// CodeRemarks
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void setCommentsCoachCompletedEventHandler(object sender, setCommentsCoachCompletedEventArgs e);
     
     /// CodeRemarks
@@ -7157,6 +7603,32 @@ namespace location2.trackSvc {
         private object[] results;
         
         internal getUserPmcCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// CodeRemarks
+        public object Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object)(this.results[0]));
+            }
+        }
+    }
+    
+    /// CodeRemarks
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
+    public delegate void getUserPmcDeskCompletedEventHandler(object sender, getUserPmcDeskCompletedEventArgs e);
+    
+    /// CodeRemarks
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getUserPmcDeskCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getUserPmcDeskCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -7571,6 +8043,32 @@ namespace location2.trackSvc {
         private object[] results;
         
         internal fieldAthletsAndEvenetsMobCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// CodeRemarks
+        public object Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object)(this.results[0]));
+            }
+        }
+    }
+    
+    /// CodeRemarks
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
+    public delegate void fieldAthletsAndEvenetsMobWithIdAndTypeCompletedEventHandler(object sender, fieldAthletsAndEvenetsMobWithIdAndTypeCompletedEventArgs e);
+    
+    /// CodeRemarks
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class fieldAthletsAndEvenetsMobWithIdAndTypeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal fieldAthletsAndEvenetsMobWithIdAndTypeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -8037,4 +8535,30 @@ namespace location2.trackSvc {
     /// CodeRemarks
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
     public delegate void updateAthPersonalDataCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// CodeRemarks
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
+    public delegate void pasteEventCompletedEventHandler(object sender, pasteEventCompletedEventArgs e);
+    
+    /// CodeRemarks
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("XamarinStudio", "7.0.1.24")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class pasteEventCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal pasteEventCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// CodeRemarks
+        public object Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object)(this.results[0]));
+            }
+        }
+    }
 }
