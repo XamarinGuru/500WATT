@@ -2904,8 +2904,8 @@ namespace goheja
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f08001f
-			public const int Hello = 2131230751;
+			// aapt resource value: 0x7f080026
+			public const int Hello = 2131230758;
 			
 			// aapt resource value: 0x7f080000
 			public const int app_name = 2131230720;
@@ -2961,6 +2961,9 @@ namespace goheja
 			// aapt resource value: 0x7f080013
 			public const int common_signin_button_text_long = 2131230739;
 			
+			// aapt resource value: 0x7f080021
+			public const int default_web_client_id = 2131230753;
+			
 			// aapt resource value: 0x7f080014
 			public const int define_roundedimageview = 2131230740;
 			
@@ -2969,6 +2972,24 @@ namespace goheja
 			
 			// aapt resource value: 0x7f080001
 			public const int demo_min_label = 2131230721;
+			
+			// aapt resource value: 0x7f080022
+			public const int firebase_database_url = 2131230754;
+			
+			// aapt resource value: 0x7f08001f
+			public const int gcm_defaultSenderId = 2131230751;
+			
+			// aapt resource value: 0x7f080023
+			public const int google_api_key = 2131230755;
+			
+			// aapt resource value: 0x7f080020
+			public const int google_app_id = 2131230752;
+			
+			// aapt resource value: 0x7f080024
+			public const int google_crash_reporting_api_key = 2131230756;
+			
+			// aapt resource value: 0x7f080025
+			public const int google_storage_bucket = 2131230757;
 			
 			// aapt resource value: 0x7f08001e
 			public const int library_name = 2131230750;
